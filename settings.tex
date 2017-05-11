@@ -1,0 +1,38 @@
+%
+  \usepackage{lmodern}
+  \usepackage[T1]{fontenc}
+%
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{bm}
+  \usepackage{ascmac}
+  \usepackage{graphicx}
+  \usepackage{xcolor}
+  \usepackage{tikz}
+%
+  \usepackage{gfncmd}
+  \makeparenwidthresized
+  \usepackage{gfnlf}
+  \useupperquantifierheight
+  \usepackage{gfndecox}
+  \newdecoclass{\defpar}{’è‹`}{ul}{subsubsection}
+  \newdecoclass{\thmpar}{’è—}{box}{subsubsection}
+  \newdecoclass{\lempar}{•â‘è}{box}{subsubsection}
+  \newdecoclass{\corpar}{Œn}{box}{subsubsection}
+  \newdecoclass{\propdefpar}{’è‹`}{box}{subsubsection}
+  \newnotitledecoclass{\proof}{Ø–¾}{topwithbottom}
+  \newnotitledecoclass{\plainpar}{}{top}
+  \usepackage{gfncls}
+  \setsectiontheme{strongline}
+%
+  \setlength{\parskip}{1em}
+% ---- listing ----
+  \def\@listi{%
+    \leftmargin=\leftmargini\relax
+    \topsep=0.5em\relax
+    \partopsep=0em\relax
+    \parsep=0.5em\relax
+    \itemsep=0.5em\relax
+  }
+  \let\@listI=\@listi
+  \@listi

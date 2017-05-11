@@ -1,0 +1,51 @@
+  \def\TODO#1{\noindent\fcolorbox{red}{yellow}{\parbox{0.98\textwidth}{\textcolor{red}{\textsf{—v‰Á•M}}\quad#1}}\par}
+  \def\QUESTION{%
+    \begin{tikzpicture}
+    \path[use as bounding box] (-1em, -0.375em) rectangle (1em, 0.625em);
+      \draw[color=red, line width=1pt] (0, 0) node[circle, draw] {\!\rule{0pt}{0.75em}\smash{\large\textsf{?}}\!};
+    \end{tikzpicture}%
+  }
+  \def\TODOMUST#1{\noindent\fcolorbox{red}{orange}{\parbox{0.98\textwidth}{#1}}\par}
+  \let\gfncmd@land\land
+  \def\land{\mathrel{\text{\fontsize{1.2em}{0pt}\selectfont$\gfncmd@land$}}}
+  \let\gfncmd@lor\lor
+  \def\lor{\mathrel{\text{\fontsize{1.2em}{0pt}\selectfont$\gfncmd@lor$}}}
+  \def\dummysub{\scriptrange{\paren{\dummysign}}}
+  \def\symdiff{\mathrel{\triangle}}
+  \def\appv#1#2{#1#2}
+  \def\setNpos{\setcapital{N}^{\!+\!}}
+  \def\setRpos{\setcapital{R}^{\!\!+\!}}
+  \def\setRninf{\underline{\setR}}
+  \def\setRpinf{\overline{\setR}}
+  \def\Ball#1#2#3{\mathrm{B}_{\scriptrange{#1}}\paren{#2, #3}}
+  \def\opneighb#1#2{\mathrm{N}_{\scriptrange{#1}}\paren{#2}}
+  \def\topcls#1{\overline{#1}}
+  \def\topker#1{#1^\circ}
+  \def\Prob{\mathrm{P}}
+  \let\mathfam=\mathcal
+  \let\mathfamset=\bm
+%
+  \def\famA{\mathfam{A}}
+  \def\famB{\mathfam{B}}
+  \def\famJ{\mathfam{J}}
+  \def\famS{\mathfam{S}}
+  \def\famX{\mathfam{X}}
+  \def\famY{\mathfam{Y}}
+  \def\topO{\mathfam{O}}
+  \def\famU{\mathfam{U}}
+  \def\famV{\mathfam{V}}
+  \def\famBorel#1{\mathbf{B}_{#1}}
+  \def\famJQ#1{\mathbf{J}_{#1}^{\setQ}}
+  \def\famJR#1{\mathbf{J}_{#1}}
+  \def\famAR#1{\mathbf{A}_{#1}}
+  \def\famsetB{\mathfamset{B}}
+  \def\SFover#1{\mathbf{\rmSigma F}_{\scriptrange{#1}}}
+  \def\Powercnt#1{\Power{_{\mathrm{cnt}}#1}}
+  \def\compl#1{#1^{\mathrm{c}}}
+%
+  \def\vecx{\bm{x}}
+  \def\Aof{\mathbf{A}}
+  \def\funcset#1#2{\paren{\doms{#1}{#2}}}
+  \def\distfunc{\bm{d}}
+  \def\Cont#1#2{\mathbf{C}\paren{#1, #2}}
+  \def\Euclid#1{\mathbf{E}_{#1}}

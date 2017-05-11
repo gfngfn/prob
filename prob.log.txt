@@ -1,0 +1,2171 @@
+This is e-pTeX, Version 3.14159265-p3.4-130605-2.6 (sjis) (TeX Live 2013/W32TeX) (preloaded format=platex 2014.1.20)  11 MAR 2016 18:02
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**prob.tex
+(./prob.tex
+pLaTeX2e <2006/11/10> (based on LaTeX2e <2011/06/27> patch level 0)
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+(c:/w32tex/share/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+Document Class: jsarticle 2014/02/07 okumura
+(c:/w32tex/share/texmf-dist/tex/latex/base/leqno.clo
+File: leqno.clo 1998/08/17 v1.1c Standard LaTeX option (left equation numbers)
+)
+LaTeX Info: Redefining \rmfamily on input line 352.
+LaTeX Info: Redefining \sffamily on input line 355.
+LaTeX Info: Redefining \ttfamily on input line 358.
+\symmincho=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 423.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 613.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 613.
+\fullwidth=\dimen118
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 760.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 760.
+\c@part=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\@abstractbox=\box41
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\js@tocl@width=\dimen119
+\@lnumwidth=\dimen120
+\bibindent=\dimen121
+LaTeX Info: Redefining \TeX on input line 1731.
+LaTeX Info: Redefining \LaTeX on input line 1757.
+LaTeX Info: Redefining \LaTeXe on input line 1782.
+\heisei=\count89
+) (./settings.tex
+(c:/w32tex/share/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(c:/w32tex/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(c:/w32tex/share/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(c:/w32tex/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(c:/w32tex/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(c:/w32tex/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen122
+))
+(c:/w32tex/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen123
+)
+(c:/w32tex/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box42
+\strutbox@=\box43
+\big@size=\dimen124
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks16
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks17
+\eqnshift@=\dimen125
+\alignsep@=\dimen126
+\tagshift@=\dimen127
+\tagwidth@=\dimen128
+\totwidth@=\dimen129
+\lineht@=\dimen130
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(c:/w32tex/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/w32tex/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(c:/w32tex/share/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup7
+\symboldletters=\mathgroup8
+\symboldsymbols=\mathgroup9
+\symboldmincho=\mathgroup10
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
+LaTeX Info: Redefining \bm on input line 204.
+)
+(c:/w32tex/share/texmf-dist/tex/platex/base/ascmac.sty
+(c:/w32tex/share/texmf-dist/tex/platex/base/tascmac.sty
+\@savetbaselineshift=\dimen131
+\@saveybaselineshift=\dimen132
+\scb@x=\box44
+\scscb@x=\box45
+\@bw=\dimen133
+\@nbox=\box46
+\@nbody=\box47
+\@scw=\dimen134
+\@itemh=\dimen135
+\@iboxpos=\toks20
+\@iboxstr=\box48
+\@bwsp=\box49
+\@@bwsp=\box50
+\@bcal=\count102
+\shaderule=\dimen136
+))
+(c:/w32tex/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/w32tex/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(c:/w32tex/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/w32tex/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(c:/w32tex/share/texmf-dist/tex/latex/config/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: dvipdfmx.def on input line 91.
+
+(c:/w32tex/share/texmf-dist/tex/latex/graphics/dvipdfmx.def
+File: dvipdfmx.def 2014/01/23 v3.4 LaTeX graphics driver for dvipdfmx (TeX Live
+/ChoF)
+))
+\Gin@req@height=\dimen137
+\Gin@req@width=\dimen138
+)
+(c:/w32tex/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(c:/w32tex/share/texmf-dist/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: dvipdfmx.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(c:/w32tex/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(c:/w32tex/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(c:/w32tex/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks22
+\pgfutil@tempdima=\dimen139
+\pgfutil@tempdimb=\dimen140
+
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)
+) (c:/w32tex/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box51
+
+(c:/w32tex/share/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2013/12/20 v3.0.0 (rcs-revision 1.28)
+))
+Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
+
+(c:/w32tex/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(c:/w32tex/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
+
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks23
+\pgfkeys@temptoks=\toks24
+
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks25
+))
+\pgf@x=\dimen141
+\pgf@y=\dimen142
+\pgf@xa=\dimen143
+\pgf@ya=\dimen144
+\pgf@xb=\dimen145
+\pgf@yb=\dimen146
+\pgf@xc=\dimen147
+\pgf@yc=\dimen148
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count103
+\c@pgf@countb=\count104
+\c@pgf@countc=\count105
+\c@pgf@countd=\count106
+\t@pgf@toka=\toks26
+\t@pgf@tokb=\toks27
+\t@pgf@tokc=\toks28
+ (c:/w32tex/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-dvipdfmx.def
+
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2013/08/28  (rcs-revision 1.12)
+
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)
+\pgfsys@objnum=\count107
+))
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count108
+\pgfsyssoftpath@bigbuffer@items=\count109
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+)) (c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
+
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen149
+\pgfmath@count=\count110
+\pgfmath@box=\box52
+\pgfmath@toks=\toks29
+\pgfmath@stack@operand=\toks30
+\pgfmath@stack@operation=\toks31
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.te
+x)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric
+.code.tex)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.t
+ex)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.co
+de.tex)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.te
+x)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithm
+etics.code.tex)))
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count111
+))
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen150
+\pgf@picmaxx=\dimen151
+\pgf@picminy=\dimen152
+\pgf@picmaxy=\dimen153
+\pgf@pathminx=\dimen154
+\pgf@pathmaxx=\dimen155
+\pgf@pathminy=\dimen156
+\pgf@pathmaxy=\dimen157
+\pgf@xx=\dimen158
+\pgf@xy=\dimen159
+\pgf@yx=\dimen160
+\pgf@yy=\dimen161
+\pgf@zx=\dimen162
+\pgf@zy=\dimen163
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.cod
+e.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen164
+\pgf@path@lasty=\dimen165
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.te
+x
+File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
+\pgf@shorten@end@additional=\dimen166
+\pgf@shorten@start@additional=\dimen167
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
+\pgfpic=\box53
+\pgf@hbox=\box54
+\pgf@layerbox@main=\box55
+\pgf@picture@serial@count=\count112
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code
+.tex
+File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
+\pgflinewidth=\dimen168
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.c
+ode.tex
+File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
+\pgf@pt@x=\dimen169
+\pgf@pt@y=\dimen170
+\pgf@pt@temp=\dimen171
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.co
+de.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
+\pgfarrowsep=\dimen172
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen173
+\pgf@sys@shading@range@num=\count113
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
+\pgfexternal@startupbox=\box56
+))
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code
+.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
+\pgfnodeparttextbox=\box57
+)
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
+)
+(c:/w32tex/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.st
+y
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen174
+\pgf@nodesepend=\dimen175
+)
+(c:/w32tex/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.st
+y
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
+)) (c:/w32tex/share/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(c:/w32tex/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(c:/w32tex/share/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
+
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen176
+\pgffor@skip=\dimen177
+\pgffor@stack=\toks32
+\pgffor@toks=\toks33
+))
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz.code.tex
+Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
+
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
+de.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
+\pgf@plot@mark@count=\count114
+\pgfplotmarksize=\dimen178
+)
+\tikz@lastx=\dimen179
+\tikz@lasty=\dimen180
+\tikz@lastxsaved=\dimen181
+\tikz@lastysaved=\dimen182
+\tikzleveldistance=\dimen183
+\tikzsiblingdistance=\dimen184
+\tikz@figbox=\box58
+\tikz@figbox@bg=\box59
+\tikz@tempbox=\box60
+\tikz@tempbox@bg=\box61
+\tikztreelevel=\count115
+\tikznumberofchildren=\count116
+\tikznumberofcurrentchild=\count117
+\tikz@fig@count=\count118
+
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count119
+\pgfmatrixcurrentcolumn=\count120
+\pgf@matrix@numberofcolumns=\count121
+)
+\tikz@expandcount=\count122
+
+(c:/w32tex/share/texmf-dist/tex/generic/pgf/frontendlayer/libraries/tikzlibrary
+topaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
+))) (c:/w32tex/share/texmf-local/tex/latex/gfncmd/gfncmd.sty
+\gfncmd@count@rankofparen=\count123
+\gfncmd@dimen@height=\dimen185
+\gfncmd@dimen@depth=\dimen186
+\gfncmd@dimen@innerdepth=\dimen187
+\gfncmd@count@modedepth=\count124
+\gfncmd@dimen@heightA=\dimen188
+\gfncmd@dimen@depthA=\dimen189
+\gfncmd@dimen@heightB=\dimen190
+\gfncmd@dimen@depthB=\dimen191
+\gfncmd@dimen@parenheight=\dimen192
+\gfncmd@dimen@funcwidth=\dimen193
+\gfncmd@dimen@domwidth=\dimen194
+\gfncmd@dimen@domdepth=\dimen195
+\gfncmd@dimen@codwidth=\dimen196
+\gfncmd@dimen@coddepth=\dimen197
+\gfncmd@dimen@paramwidth=\dimen198
+\gfncmd@dimen@paramheight=\dimen199
+\gfncmd@dimen@valwidth=\dimen200
+\gfncmd@dimen@valheight=\dimen201
+\gfncmd@dimen@upperdepth=\dimen202
+\gfncmd@dimen@middle=\dimen203
+\gfncmd@dimen@lowerpos=\dimen204
+\c@thmenum=\count125
+\gfncmd@dimen@maxwidth=\dimen205
+)
+(c:/w32tex/share/texmf-local/tex/latex/gfncmd/gfnlf.sty
+Package: gfnlf 2015/02/07 v0.9 by gfn (Takashi SUWA)
+)
+(c:/w32tex/share/texmf-local/tex/latex/gfncmd/gfndecox.sty)
+(c:/w32tex/share/texmf-local/tex/latex/gfncmd/gfncls.sty
+\gfncls@dimen@titleheight=\dimen206
+\gfncls@dimen@authorheight=\dimen207
+\gfncls@dimen@dateheight=\dimen208
+\gfncls@dimen@lowerheight=\dimen209
+\gfncls@dimen@datemiddle=\dimen210
+\gfncls@dimen@textwidth=\dimen211
+)) (./style.sty)
+(./prob.aux)
+\openout1 = `prob.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+ (I search kanjifont definition file: . . )
+(I search font definition file: . . . . . . . )
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 9.
+
+(c:/w32tex/share/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+ABD: EveryShipout initializing macros
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 16.60605pt on input line 10.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 16.60605pt on input line 10.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 10.
+
+(c:/w32tex/share/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 10.
+
+(c:/w32tex/share/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 10.
+
+
+(c:/w32tex/share/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 10.
+
+
+(c:/w32tex/share/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 10.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 10.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 10.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 10.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 10.
+LaTeX Font Info:    Try loading font information for U+msa on input line 10.
+
+(c:/w32tex/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 10.
+
+(c:/w32tex/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 10.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 10.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 10.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 10.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 10.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 10.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 10.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 10.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.76599pt on input line 10.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 10.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 10.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.76599pt on input line 10.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 10.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 10.
+
+(c:/w32tex/share/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 16.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 16.
+
+(c:/w32tex/share/texmf-dist/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 16.60605pt on input line 16.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 16.60605pt on input line 16.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 17.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 17.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 17.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 17.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 10.97125pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 10.97125pt on input line 28.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 10.40932pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 10.40932pt on input line 28.
+LaTeX Font Info:    Calculating math sizes for size <10.83179> on input line 28
+.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.83179> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.58221> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.4159> on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.28648pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.20465pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 10.40932pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.28648pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.20465pt on input line 28.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.10265pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.10265pt on input line 28.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.90027pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.90027pt on input line 28.
+LaTeX Font Info:    Calculating math sizes for size <10.30208> on input line 28
+.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.30208> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.21141> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.15103> on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.93015pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.95012pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.90027pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.93015pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.95012pt on input line 28.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.90347pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.90347pt on input line 28.
+LaTeX Font Info:    Calculating math sizes for size <10.3054> on input line 28.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.3054> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.21375> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.1527> on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.93239pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.95172pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.90347pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.93239pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.95172pt on input line 28.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 10.14375pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 10.14375pt on input line 28.
+LaTeX Font Info:    Calculating math sizes for size <10.55544> on input line 28
+.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.55544> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.38876> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.27771> on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.10059pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.07187pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 10.14375pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.10059pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.07187pt on input line 28.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 13.02666pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.02666pt on input line 28.
+LaTeX Font Info:    Calculating math sizes for size <13.55534> on input line 28
+.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <13.55534> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.4887> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.77766> on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.1186pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.51332pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 13.02666pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.1186pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.51332pt on input line 28.
+LaTeX Font Info:    Calculating math sizes for size <11.41652> on input line 28
+.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.41652> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.99152> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.70825> on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.67982pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.48561pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 10.97125pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.67982pt on input line 28.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.48561pt on input line 28.
+LaTeX Font Info:    Calculating math sizes for size <9.47208> on input line 42.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.47208> on input line 42.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.63042> on input line 42.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <4.73604> on input line 42.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.37181pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.55132pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.10265pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.37181pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.55132pt on input line 42.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 8.27515pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.27515pt on input line 42.
+LaTeX Font Info:    Calculating math sizes for size <8.611> on input line 42.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.611> on input line 42.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.02766> on input line 42.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <4.3055> on input line 42.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.79257pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.13757pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.27515pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.79257pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.13757pt on input line 42.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.99893pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.99893pt on input line 42.
+LaTeX Font Info:    Calculating math sizes for size <12.4859> on input line 42.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12.4859> on input line 42.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.74008> on input line 42.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.24295> on input line 42.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.3992pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.99947pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.99893pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.3992pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.99947pt on input line 42.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 42.
+LaTeX Font Info:    Font shape `JT1/mc/m/it' in size <9> not available
+(Font)              Font shape `JT1/mc/m/n' tried instead on input line 42.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 42.
+LaTeX Font Info:    Font shape `JY1/mc/m/it' in size <9> not available
+(Font)              Font shape `JY1/mc/m/n' tried instead on input line 42.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 42.
+ [1
+
+]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.71663pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.71663pt on input line 74.
+LaTeX Font Info:    Calculating math sizes for size <10.11098> on input line 74
+.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.11098> on input line 74.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.07765> on input line 74.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.05548> on input line 74.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.8016pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.8583pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.71663pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.8016pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.8583pt on input line 74.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 12.79175pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 12.79175pt on input line 74.
+LaTeX Font Info:    Calculating math sizes for size <13.3109> on input line 74.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <13.3109> on input line 74.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.31758> on input line 74.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.65544> on input line 74.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.95418pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.39586pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 12.79175pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.95418pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.39586pt on input line 74.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 10.54413pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 10.54413pt on input line 74.
+LaTeX Font Info:    Calculating math sizes for size <10.97206> on input line 74
+.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.97206> on input line 74.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.6804> on input line 74.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.48602> on input line 74.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.38084pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.27205pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 10.54413pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.38084pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.27205pt on input line 74.
+LaTeX Font Info:    Try loading font information for U+euf on input line 74.
+
+(c:/w32tex/share/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 16.20358pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 16.20358pt on input line 74.
+LaTeX Font Info:    Calculating math sizes for size <16.8612> on input line 74.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <16.8612> on input line 74.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.80278> on input line 74.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.4306> on input line 74.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.34245pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.10179pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 16.20358pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.34245pt on input line 74.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.10179pt on input line 74.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.50514pt on input line 119.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.50514pt on input line 119.
+LaTeX Font Info:    Calculating math sizes for size <11.97208> on input line 11
+9.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.97208> on input line 119.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.38042> on input line 119.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.98604> on input line 119.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.05356pt on input line 119.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.75256pt on input line 119.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.50514pt on input line 119.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.05356pt on input line 119.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.75256pt on input line 119.
+ [2] [3]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 205.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 205.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 5.79257pt on input line 205.
+LaTeX Font Info:    Calculating math sizes for size <6.02766> on input line 205
+.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <4.21935> on input line 205.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <3.01382> on input line 205.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.05478pt on input line 205.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 2.89627pt on input line 205.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.05478pt on input line 205.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 2.89627pt on input line 205.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.53195pt on input line 224.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.53195pt on input line 224.
+LaTeX Font Info:    Calculating math sizes for size <11.99997> on input line 22
+4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.99997> on input line 224.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.39993> on input line 224.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.99998> on input line 224.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.07231pt on input line 224.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.76598pt on input line 224.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.53195pt on input line 224.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.07231pt on input line 224.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.76598pt on input line 224.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.58182pt on input line 236.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.58182pt on input line 236.
+LaTeX Font Info:    Calculating math sizes for size <9.9707> on input line 236.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.9707> on input line 236.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.97946> on input line 236.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <4.98535> on input line 236.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.70724pt on input line 236.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.79091pt on input line 236.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.58182pt on input line 236.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.70724pt on input line 236.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.79091pt on input line 236.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 12.7176pt on input line 236.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 12.7176pt on input line 236.
+LaTeX Font Info:    Calculating math sizes for size <13.23375> on input line 23
+6.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <13.23375> on input line 236.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.26358> on input line 236.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.61687> on input line 236.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.90228pt on input line 236.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.3588pt on input line 236.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 12.7176pt on input line 236.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.90228pt on input line 236.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.3588pt on input line 236.
+ [4]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 281.
+
+
+(c:/w32tex/share/texmf-dist/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 281.
+ [5]
+LaTeX Font Info:    Font shape `JT1/mc/m/sc' in size <10> not available
+(Font)              Font shape `JT1/mc/m/n' tried instead on input line 310.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 310.
+LaTeX Font Info:    Font shape `JY1/mc/m/sc' in size <10> not available
+(Font)              Font shape `JY1/mc/m/n' tried instead on input line 310.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 310.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 12.53094pt on input line 350.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 12.53094pt on input line 350.
+LaTeX Font Info:    Calculating math sizes for size <13.0395> on input line 350
+.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <13.0395> on input line 350.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.12761> on input line 350.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.51974> on input line 350.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.7716pt on input line 350.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.26546pt on input line 350.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 12.53094pt on input line 350.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.7716pt on input line 350.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.26546pt on input line 350.
+ [6]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.93015pt on input line 356.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.93015pt on input line 356.
+LaTeX Font Info:    Calculating math sizes for size <10.33316> on input line 35
+6.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.33316> on input line 356.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.23317> on input line 356.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.16658> on input line 356.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.95107pt on input line 356.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.96507pt on input line 356.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.93015pt on input line 356.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.95107pt on input line 356.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.96507pt on input line 356.
+ [7] [8] [9]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.3355pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.3355pt on input line 549.
+LaTeX Font Info:    Calculating math sizes for size <11.79555> on input line 54
+9.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.79555> on input line 549.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.25684> on input line 549.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.89777> on input line 549.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.9348pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.66774pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.3355pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.9348pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.66774pt on input line 549.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.46689pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.46689pt on input line 549.
+LaTeX Font Info:    Calculating math sizes for size <9.8511> on input line 549.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.8511> on input line 549.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.89574> on input line 549.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <4.92555> on input line 549.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.62679pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.73344pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.46689pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.62679pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.73344pt on input line 549.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.07597pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.07597pt on input line 549.
+LaTeX Font Info:    Calculating math sizes for size <9.44432> on input line 549
+.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.44432> on input line 549.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.611> on input line 549.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <4.72215> on input line 549.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.35315pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.53798pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.07597pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.35315pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.53798pt on input line 549.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.17142pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.17142pt on input line 549.
+LaTeX Font Info:    Calculating math sizes for size <11.62482> on input line 54
+9.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.62482> on input line 549.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.13733> on input line 549.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.81241> on input line 549.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.81995pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.58571pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.17142pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.81995pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.58571pt on input line 549.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 14.17114pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 14.17114pt on input line 549.
+LaTeX Font Info:    Calculating math sizes for size <14.74628> on input line 54
+9.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.74628> on input line 549.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.32234> on input line 549.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.37314> on input line 549.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.91975pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.08557pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 14.17114pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.91975pt on input line 549.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.08557pt on input line 549.
+
+[10]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 577.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 577.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.39996pt on input line 584.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.39996pt on input line 584.
+LaTeX Font Info:    Calculating math sizes for size <11.86263> on input line 58
+4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.86263> on input line 584.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.30379> on input line 584.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.9313> on input line 584.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.97992pt on input line 584.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.69997pt on input line 584.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.39996pt on input line 584.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.97992pt on input line 584.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.69997pt on input line 584.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.85214pt on input line 584.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.85214pt on input line 584.
+LaTeX Font Info:    Calculating math sizes for size <12.33316> on input line 58
+4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12.33316> on input line 584.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.63316> on input line 584.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.16658> on input line 584.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.29645pt on input line 584.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.92607pt on input line 584.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.85214pt on input line 584.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.29645pt on input line 584.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.92607pt on input line 584.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 12.80907pt on input line 611.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 12.80907pt on input line 611.
+LaTeX Font Info:    Calculating math sizes for size <13.32892> on input line 61
+1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <13.32892> on input line 611.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.3302> on input line 611.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.66446> on input line 611.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.96631pt on input line 611.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.40453pt on input line 611.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 12.80907pt on input line 611.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.96631pt on input line 611.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.40453pt on input line 611.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 17.81076pt on input line 611.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 17.81076pt on input line 611.
+LaTeX Font Info:    Calculating math sizes for size <18.5336> on input line 611
+.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <18.5336> on input line 611.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12.97345> on input line 611.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.2668> on input line 611.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 12.46745pt on input line 611.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.90538pt on input line 611.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 17.81076pt on input line 611.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 12.46745pt on input line 611.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.90538pt on input line 611.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 13.63657pt on input line 611.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.63657pt on input line 611.
+LaTeX Font Info:    Calculating math sizes for size <14.19> on input line 611.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.19> on input line 611.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.93295> on input line 611.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.095> on input line 611.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.54555pt on input line 611.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.81828pt on input line 611.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 13.63657pt on input line 611.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.54555pt on input line 611.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.81828pt on input line 611.
+ [11]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.4784pt on input line 662.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.4784pt on input line 662.
+LaTeX Font Info:    Calculating math sizes for size <11.94424> on input line 66
+2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.94424> on input line 662.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.36093> on input line 662.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.97212> on input line 662.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.03484pt on input line 662.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.7392pt on input line 662.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.4784pt on input line 662.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.03484pt on input line 662.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.7392pt on input line 662.
+ [12]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 13.50795pt on input line 715.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.50795pt on input line 715.
+LaTeX Font Info:    Calculating math sizes for size <14.05617> on input line 71
+5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.05617> on input line 715.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.83926> on input line 715.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.02808> on input line 715.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.4555pt on input line 715.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.75397pt on input line 715.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 13.50795pt on input line 715.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.4555pt on input line 715.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.75397pt on input line 715.
+ [13]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 30.772pt on input line 774.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 30.772pt on input line 774.
+LaTeX Font Info:    Calculating math sizes for size <32.02087> on input line 77
+4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <32.02087> on input line 774.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <22.4145> on input line 774.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <16.01044> on input line 774.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 21.5403pt on input line 774.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 15.386pt on input line 774.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 30.772pt on input line 774.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 21.5403pt on input line 774.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 15.386pt on input line 774.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 10.43358pt on input line 774.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 10.43358pt on input line 774.
+LaTeX Font Info:    Calculating math sizes for size <10.85703> on input line 77
+4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.85703> on input line 774.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.59988> on input line 774.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.42851> on input line 774.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.30347pt on input line 774.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.21678pt on input line 774.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 10.43358pt on input line 774.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.30347pt on input line 774.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.21678pt on input line 774.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.26108pt on input line 774.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.26108pt on input line 774.
+LaTeX Font Info:    Calculating math sizes for size <11.71811> on input line 77
+4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.71811> on input line 774.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.20264> on input line 774.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.85905> on input line 774.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.88272pt on input line 774.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.63054pt on input line 774.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.26108pt on input line 774.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.88272pt on input line 774.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.63054pt on input line 774.
+ [14]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 12.89917pt on input line 781.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 12.89917pt on input line 781.
+LaTeX Font Info:    Calculating math sizes for size <13.42268> on input line 78
+1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <13.42268> on input line 781.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.39583> on input line 781.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.71133> on input line 781.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.02937pt on input line 781.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.44957pt on input line 781.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 12.89917pt on input line 781.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.02937pt on input line 781.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.44957pt on input line 781.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 20.40353pt on input line 803.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 20.40353pt on input line 803.
+LaTeX Font Info:    Calculating math sizes for size <21.2316> on input line 803
+.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <21.2316> on input line 803.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.86205> on input line 803.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.6158> on input line 803.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 14.2824pt on input line 803.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 10.20177pt on input line 803.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 20.40353pt on input line 803.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 14.2824pt on input line 803.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 10.20177pt on input line 803.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 19.97234pt on input line 841.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 19.97234pt on input line 841.
+LaTeX Font Info:    Calculating math sizes for size <20.78291> on input line 84
+1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <20.78291> on input line 841.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.54797> on input line 841.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.39145> on input line 841.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.98058pt on input line 841.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.98616pt on input line 841.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 19.97234pt on input line 841.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 13.98058pt on input line 841.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.98616pt on input line 841.
+ [15] [16]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.99904pt on input line 918.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.99904pt on input line 918.
+LaTeX Font Info:    Calculating math sizes for size <12.48602> on input line 91
+8.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12.48602> on input line 918.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.74017> on input line 918.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.24301> on input line 918.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.39929pt on input line 918.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.99951pt on input line 918.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.99904pt on input line 918.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.39929pt on input line 918.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.99951pt on input line 918.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 18.9798pt on input line 931.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 18.9798pt on input line 931.
+LaTeX Font Info:    Calculating math sizes for size <19.75009> on input line 93
+1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <19.75009> on input line 931.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <13.825> on input line 931.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.87505> on input line 931.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.2858pt on input line 931.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.4899pt on input line 931.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 18.9798pt on input line 931.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 13.2858pt on input line 931.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.4899pt on input line 931.
+ [17]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 10.14374pt on input line 1023.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 10.14374pt on input line 1023.
+LaTeX Font Info:    Calculating math sizes for size <10.55542> on input line 10
+23.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.55542> on input line 1023.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.38875> on input line 1023.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.10057pt on input line 1023.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 10.14374pt on input line 1023.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.10057pt on input line 1023.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 15.37608pt on input line 1023.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 15.37608pt on input line 1023.
+LaTeX Font Info:    Calculating math sizes for size <16.00012> on input line 10
+23.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <16.00012> on input line 1023.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.20003> on input line 1023.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.00006> on input line 1023.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 10.7632pt on input line 1023.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.68803pt on input line 1023.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 15.37608pt on input line 1023.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 10.7632pt on input line 1023.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.68803pt on input line 1023.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 16.33481pt on input line 1023.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 16.33481pt on input line 1023.
+LaTeX Font Info:    Calculating math sizes for size <16.99776> on input line 10
+23.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <16.99776> on input line 1023.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.89838> on input line 1023.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.49887> on input line 1023.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.43431pt on input line 1023.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.16739pt on input line 1023.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 16.33481pt on input line 1023.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.43431pt on input line 1023.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.16739pt on input line 1023.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 10.97124pt on input line 1023.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 10.97124pt on input line 1023.
+LaTeX Font Info:    Calculating math sizes for size <11.4165> on input line 102
+3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.4165> on input line 1023.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 10.97124pt on input line 1023.
+ [18]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.88745pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.88745pt on input line 1061.
+LaTeX Font Info:    Calculating math sizes for size <10.28873> on input line 10
+61.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.28873> on input line 1061.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.20207> on input line 1061.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.14436> on input line 1061.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.92117pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.94373pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.88745pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.92117pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.94373pt on input line 1061.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.70343pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.70343pt on input line 1061.
+LaTeX Font Info:    Calculating math sizes for size <12.17842> on input line 10
+61.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12.17842> on input line 1061.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.52486> on input line 1061.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.0892> on input line 1061.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.19237pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.8517pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.70343pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.19237pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.8517pt on input line 1061.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 16.20927pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 16.20927pt on input line 1061.
+LaTeX Font Info:    Calculating math sizes for size <16.86713> on input line 10
+61.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <16.86713> on input line 1061.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.80693> on input line 1061.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.43356> on input line 1061.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.34644pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.10463pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 16.20927pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.34644pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.10463pt on input line 1061.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 17.37561pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 17.37561pt on input line 1061.
+LaTeX Font Info:    Calculating math sizes for size <18.0808> on input line 106
+1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <18.0808> on input line 1061.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12.6565> on input line 1061.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.04039> on input line 1061.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 12.16287pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.68779pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 17.37561pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 12.16287pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.68779pt on input line 1061.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 17.03677pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 17.03677pt on input line 1061.
+LaTeX Font Info:    Calculating math sizes for size <17.72821> on input line 10
+61.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <17.72821> on input line 1061.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12.40968> on input line 1061.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.8641> on input line 1061.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.92567pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.51839pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 17.03677pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.92567pt on input line 1061.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.51839pt on input line 1061.
+ [19]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 10.67764pt on input line 1156.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 10.67764pt on input line 1156.
+LaTeX Font Info:    Calculating math sizes for size <11.111> on input line 1156
+.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.111> on input line 1156.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.77765> on input line 1156.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.5555> on input line 1156.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.4743pt on input line 1156.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.33882pt on input line 1156.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 10.67764pt on input line 1156.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.4743pt on input line 1156.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.33882pt on input line 1156.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 13.3203pt on input line 1156.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.3203pt on input line 1156.
+LaTeX Font Info:    Calculating math sizes for size <13.8609> on input line 115
+6.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <13.8609> on input line 1156.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.70258> on input line 1156.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.93045> on input line 1156.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.32416pt on input line 1156.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.66014pt on input line 1156.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 13.3203pt on input line 1156.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.32416pt on input line 1156.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.66014pt on input line 1156.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 13.02287pt on input line 1156.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.02287pt on input line 1156.
+LaTeX Font Info:    Calculating math sizes for size <13.5514> on input line 115
+6.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <13.5514> on input line 1156.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.48593> on input line 1156.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.7757> on input line 1156.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.11595pt on input line 1156.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.51143pt on input line 1156.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 13.02287pt on input line 1156.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.11595pt on input line 1156.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.51143pt on input line 1156.
+ [20]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 12.19916pt on input line 1168.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 12.19916pt on input line 1168.
+LaTeX Font Info:    Calculating math sizes for size <12.69426> on input line 11
+68.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12.69426> on input line 1168.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.88594> on input line 1168.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.34712> on input line 1168.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.53937pt on input line 1168.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.09956pt on input line 1168.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 12.19916pt on input line 1168.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.53937pt on input line 1168.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.09956pt on input line 1168.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 24.69958pt on input line 1168.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 24.69958pt on input line 1168.
+LaTeX Font Info:    Calculating math sizes for size <25.70201> on input line 11
+68.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <25.70201> on input line 1168.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <17.99132> on input line 1168.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12.851> on input line 1168.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 17.28963pt on input line 1168.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 12.34978pt on input line 1168.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 24.69958pt on input line 1168.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 17.28963pt on input line 1168.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 12.34978pt on input line 1168.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 10.51042pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 10.51042pt on input line 1201.
+LaTeX Font Info:    Calculating math sizes for size <10.93698> on input line 12
+01.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.93698> on input line 1201.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.65585> on input line 1201.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.46849> on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.35725pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.2552pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 10.51042pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.35725pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.2552pt on input line 1201.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 18.15219pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 18.15219pt on input line 1201.
+LaTeX Font Info:    Calculating math sizes for size <18.8889> on input line 120
+1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <18.8889> on input line 1201.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <13.22217> on input line 1201.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.44444> on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 12.70648pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.0761pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 18.15219pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 12.70648pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.0761pt on input line 1201.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.33792pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.33792pt on input line 1201.
+LaTeX Font Info:    Calculating math sizes for size <11.79807> on input line 12
+01.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.79807> on input line 1201.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.2586> on input line 1201.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.89903> on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.93651pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.66896pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.33792pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.93651pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.66896pt on input line 1201.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 16.3368pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 16.3368pt on input line 1201.
+LaTeX Font Info:    Calculating math sizes for size <16.99983> on input line 12
+01.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <16.99983> on input line 1201.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.89983> on input line 1201.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.49991> on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.43571pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.1684pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 16.3368pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.43571pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.1684pt on input line 1201.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 7.10059pt on input line 1201.
+LaTeX Font Info:    Calculating math sizes for size <7.38876> on input line 120
+1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.1721> on input line 1201.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <3.69438> on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.97038pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 3.5503pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.97038pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 3.5503pt on input line 1201.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 18.2054pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 18.2054pt on input line 1201.
+LaTeX Font Info:    Calculating math sizes for size <18.94426> on input line 12
+01.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <18.94426> on input line 1201.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <13.26091> on input line 1201.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.47212> on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 12.74371pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.10269pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 18.2054pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 12.74371pt on input line 1201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.10269pt on input line 1201.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 21.09125pt on input line 1324.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 21.09125pt on input line 1324.
+LaTeX Font Info:    Calculating math sizes for size <21.94724> on input line 13
+24.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <21.94724> on input line 1324.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <15.36299> on input line 1324.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.97362> on input line 1324.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 14.76381pt on input line 1324.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 10.54562pt on input line 1324.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 21.09125pt on input line 1324.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 14.76381pt on input line 1324.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 10.54562pt on input line 1324.
+ [21]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 15.82964pt on input line 1324.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 15.82964pt on input line 1324.
+LaTeX Font Info:    Calculating math sizes for size <16.47208> on input line 13
+24.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <16.47208> on input line 1324.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.5304> on input line 1324.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.23604> on input line 1324.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.08069pt on input line 1324.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.91481pt on input line 1324.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 15.82964pt on input line 1324.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.08069pt on input line 1324.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.91481pt on input line 1324.
+ [22]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 17.69823pt on input line 1324.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 17.69823pt on input line 1324.
+LaTeX Font Info:    Calculating math sizes for size <18.4165> on input line 132
+4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <18.4165> on input line 1324.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12.8915> on input line 1324.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.20825> on input line 1324.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 12.3887pt on input line 1324.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.8491pt on input line 1324.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 17.69823pt on input line 1324.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 12.3887pt on input line 1324.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.8491pt on input line 1324.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 17.3779pt on input line 1332.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 17.3779pt on input line 1332.
+LaTeX Font Info:    Calculating math sizes for size <18.08318> on input line 13
+32.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <18.08318> on input line 1332.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12.65816> on input line 1332.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.04158> on input line 1332.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 12.16446pt on input line 1332.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.68893pt on input line 1332.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 17.3779pt on input line 1332.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 12.16446pt on input line 1332.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.68893pt on input line 1332.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 29.21707pt on input line 1332.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 29.21707pt on input line 1332.
+LaTeX Font Info:    Calculating math sizes for size <30.40283> on input line 13
+32.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <30.40283> on input line 1332.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <21.28188> on input line 1332.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <15.20142> on input line 1332.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 20.45184pt on input line 1332.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 14.60854pt on input line 1332.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 29.21707pt on input line 1332.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 20.45184pt on input line 1332.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 14.60854pt on input line 1332.
+ [23]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 10.03696pt on input line 1433.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 10.03696pt on input line 1433.
+LaTeX Font Info:    Calculating math sizes for size <10.4443> on input line 143
+3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.4443> on input line 1433.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.31097> on input line 1433.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.22215> on input line 1433.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.02583pt on input line 1433.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.01848pt on input line 1433.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 10.03696pt on input line 1433.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.02583pt on input line 1433.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.01848pt on input line 1433.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 13.54327pt on input line 1433.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.54327pt on input line 1433.
+LaTeX Font Info:    Calculating math sizes for size <14.09293> on input line 14
+33.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.09293> on input line 1433.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.86499> on input line 1433.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.04646> on input line 1433.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.48024pt on input line 1433.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.77164pt on input line 1433.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 13.54327pt on input line 1433.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.48024pt on input line 1433.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.77164pt on input line 1433.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 4.96507pt on input line 1433.
+LaTeX Font Info:    Calculating math sizes for size <5.16658> on input line 143
+3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <3.61658> on input line 1433.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <2.58328> on input line 1433.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 3.47552pt on input line 1433.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 2.48253pt on input line 1433.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 3.47552pt on input line 1433.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 2.48253pt on input line 1433.
+ [24]
+[25] [26] [27] (./prob.aux) ) 
+Here is how much of TeX's memory you used:
+ 15383 strings out of 493813
+ 295572 string characters out of 6153871
+ 305270 words of memory out of 5000000
+ 18536 multiletter control sequences out of 15000+600000
+ 1968567 words of font info for 2521 fonts, out of 8000000 for 9000
+ 934 hyphenation exceptions out of 8191
+ 84i,20n,391p,429b,643s stack positions out of 5000i,500n,10000p,500000b,80000s
+
+Output written on prob.dvi (27 pages, 216920 bytes).

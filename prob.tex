@@ -1,0 +1,1568 @@
+\documentclass[a4paper,dvipdfmx,leqno]{jsarticle}
+\makeatletter
+  \input{settings.tex}
+  \usepackage{style}
+%
+  \title{確率論の測度論的基礎}
+  \author{\texttt{@bd\string_gfngfn}}
+\makeatother
+\begin{document}
+\maketitle
+%
+  \begin{center}\parbox{0.6\textwidth}{\noindent
+      内容の正確さは保証致しかねます．
+      誤植・誤謬等がありましたら是非ともご指摘ください．
+  \par}\end{center}
+\section{準備}
+  \subsection{集合と写像}
+    \defpar{基本的な集合の記法}{
+      整数全体を $\setZ$，正整数全体を $\setNpos$，有理数全体を $\setQ$，実数全体を $\setR$ と書く．
+      また $m,n \in \setZ$ に対して $\Natintvl{m}{n} \defeq \setprnsep{k \in \setZ}{m \leq k \leq n}$ とする．
+      特に $\Natintvl{1}{n}$ は $\Natleq{n}$ と略記する．また，新しい元 $+\infty$，$-\infty$ をそれぞれ実数全体に追加して
+      $\setRpinf \defeq \setR \cup \setprn{+\infty}$，$\setRninf \defeq \setR \cup \setprn{-\infty}$ とする．
+      $\setRpinf$ 上の順序は，$+\infty$ が最大元となるように $\setR$ 上の通常の順序 $\leq$ に対して
+      $\paren{\leq} \cup \smash{\setprnsep{\seqprn{x, +\infty}}{x \in \setRpinf}}$ と拡張し，これも単に $\leq$ と書く．
+      同様に $\setRninf$ 上の順序も $-\infty$ が最小元となるように $\setR$ 上の通常の順序 $\leq$ を
+      $\paren{\leq} \cup \smash{\setprnsep{\seqprn{-\infty, x}}{x \in \setRninf}}$
+      と拡張して単に $\leq$ と書く．
+    }
+    \defpar{像，逆像}{
+      写像 $\funcdoms{f}{A}{B}$ と $X \subseteq A$ に対して
+      \begin{align*}
+        \funcimg{f}{X}
+          &\defeq \setprnsep{\app{f}{x}}{x \in X}
+        \\&\afterdefeq \setprnsep{y \in B}{\existsin{x}{X}{y = \app{f}{x}}}
+      \end{align*}
+      を $f$ による $X$ の\newwordjaen{像}{image}と呼び，また $Y \subseteq B$ に対して
+      \begin{align*}
+        \funcinvimg{f}{Y}
+          &\defeq \setprnsep{x \in A}{\app{f}{x} \in Y}
+      \end{align*}
+      を $f$ による $Y$ の\newwordjaen{逆像}{inverse image}と呼ぶ．
+    }
+    \lempar{}{
+      写像 $\funcdoms{f}{A}{B}$ に対して
+      $\forallsub{X}{A}{\forallsub{Y}{B}{\lflimpleqv{\funcimg{f}{X} \subseteq Y}{X \subseteq \funcinvimg{f}{Y}}}}$
+      が成り立つ．
+    }
+    \proof{
+      \subproof{$\limpl$}{
+        $X \subseteq A$ および $Y \subseteq B$ のもとで
+        $x \in X$ とする．$y \defeq \app{f}{x}$ とすると像の定義より $y \in \funcimg{f}{X}$ である．
+        仮定：$\funcimg{f}{X} \subseteq Y$ より $y = \app{f}{x} \in Y$ であり，
+        したがって逆像の定義より $x \in \funcinvimg{f}{Y}$ が成り立つ．\qed
+      }
+      \subproof{$\backlimpl$}{
+        $X \subseteq A$ および $Y \subseteq B$ のもとで
+        $y \in \funcimg{f}{X}$ とすると，像の定義より $y = \app{f}{x}$ なる $x \in X$ が存在する．
+        仮定：$X \subseteq \funcinvimg{f}{Y}$ より $x \in \funcinvimg{f}{Y}$，
+        よって逆像の定義より $y = \app{f}{x} \in Y$ が成り立つ．\qed
+      }
+    }
+    \lempar[lem:basic-property-of-funcimg]{像の基本的性質}{
+      写像 $\funcdoms{f}{A}{B}$ に対し，像に関して次がそれぞれ成り立つ．
+      \begin{thmenum}
+      \thmenumitem\label{lem:basic-property-of-funcimg|1}
+        $\forallsub{X_{1}|X_{2}}{A}{\lflimpl{X_{1} \subseteq X_{2}}{\funcimg{f}{X_{1}} \subseteq \funcimg{f}{X_{2}}}}$
+      \thmenumitem\label{lem:basic-property-of-funcimg|2}
+        $\forallsub{X}{A}{X \subseteq \funcinvimg{f}{\funcimg{f}{X}}}$
+      \thmenumitem\label{lem:basic-property-of-funcimg|3}
+        $\displaystyle \forallsub{\famX}{\Power{A}}{\funcimg{f}{\bigcup \famX} = \bigcup \setprnsep{\funcimg{f}{X}}{X \in \famX}}$
+      \thmenumitem\label{lem:basic-property-of-funcimg|4}
+        $\displaystyle \forallsub{\famX}{\Power{A}}{\funcimg{f}{\bigcap \famX} \subseteq \bigcap \setprnsep{\funcimg{f}{X}}{X \in \famX}}$
+      \end{thmenum}
+    }
+    \proof{
+      \subproof{\ref{lem:basic-property-of-funcimg|1}}{
+        定義より明らかである．\qed
+      }
+      \subproof{\ref{lem:basic-property-of-funcimg|2}}{
+        $X \subseteq A$ のもとで $x \in X$ とすると像の定義より $\app{f}{x} \in \funcimg{f}{X}$ である．
+        したがって逆像の定義より $x \in \funcinvimg{f}{\funcimg{f}{X}}$ が成り立つ．\qed
+      }
+      \subproof{\ref{lem:basic-property-of-funcimg|3}}{
+        $\famX \subseteq \Power{A}$ とする．まず $\displaystyle y \in \funcimg{f}{\bigcup \famX}$ とすると，
+        像の定義より或る $\displaystyle x \in \bigcup \famX$ が存在して $y = \app{f}{x}$ を満たす．
+        この $x$ をとると或る $X \in \famX$ が存在して $x \in X$ であり，
+        像の定義より $y = \app{f}{x} \in \funcimg{f}{X}$ が成り立つから
+        $\displaystyle y \in \bigcup \setprnsep{\funcimg{f}{X}}{X \in \famX}$ である．
+        ゆえに $\displaystyle \funcimg{f}{\bigcup \famX} \subseteq \bigcup \setprnsep{\funcimg{f}{X}}{X \in \famX}$ が成り立つ．
+        逆に $\displaystyle y \in \bigcup \setprnsep{\funcimg{f}{X}}{X \in \famX}$ とすると，
+        或る $X \in \famX$ が存在して $y \in \funcimg{f}{X}$ を満たし，
+        像の定義より或る $x \in X$ が存在して $y = \app{f}{x}$．
+        この $x$ は $\displaystyle x \in X  \subseteq \bigcup \famX$ を満たし，
+        したがって像の定義より $\displaystyle y = \app{f}{x} \in \funcimg{f}{\bigcup \famX}$ である．
+        ゆえに $\displaystyle \bigcup \setprnsep{\funcimg{f}{X}}{X \in \famX} \subseteq \funcimg{f}{\bigcup \famX}$ が成り立つ．\qed
+      }
+      \subproof{\ref{lem:basic-property-of-funcimg|4}}{
+        $\famX \subseteq \Power{A}$ とする．$\displaystyle y \in \funcimg{f}{\bigcap \famX}$ とすると，
+        像の定義より或る $\displaystyle x \in \bigcap \famX$ が存在して $y = \app{f}{x}$ を満たす．
+        この $x$ をとると，任意の $X \in \famX$ に対して $x \in X$ であって像の定義より $y = \app{f}{x} \in \funcimg{f}{X}$，
+        したがって $\displaystyle y \in \bigcap \setprnsep{\funcimg{f}{X}}{X \in \famX}$ が成り立つ．
+        ゆえに $\displaystyle \funcimg{f}{\bigcap \famX} \subseteq \bigcap \setprnsep{\funcimg{f}{X}}{X \in \famX}$ である．\qed
+      }
+    }
+    \lempar[lem:basic-property-of-funcinvimg]{逆像の基本的性質}{
+      写像 $\funcdoms{f}{A}{B}$ に対し，逆像に関して次がそれぞれ成り立つ．
+      \begin{thmenum}
+      \thmenumitem\label{lem:basic-property-of-funcinvimg|1}
+        $\forallsub{Y_{1}|Y_{2}}{B}{\lflimpl{Y_{1} \subseteq Y_{2}}{\funcinvimg{f}{Y_{1}} \subseteq \funcinvimg{f}{Y_{2}}}}$
+      \thmenumitem\label{lem:basic-property-of-funcinvimg|2}
+        $\forallsub{Y}{B}{\funcimg{f}{\funcinvimg{f}{Y}}} = \funcimg{f}{A} \cap Y$
+      \thmenumitem\label{lem:basic-property-of-funcinvimg|3}
+        $\forallsub{Y}{B}{\funcinvimg{f}{B \setmns Y}} = A \setmns \funcinvimg{f}{Y}$
+      \thmenumitem\label{lem:basic-property-of-funcinvimg|4}
+        $\displaystyle \forallsub{\famY}{\Power{B}}{\funcinvimg{f}{\bigcup \famY} = \bigcup \setprnsep{\funcinvimg{f}{Y}}{Y \in \famY}}$
+      \thmenumitem\label{lem:basic-property-of-funcinvimg|5}
+        $\displaystyle \forallsub{\famY}{\Power{B}}{\funcinvimg{f}{\bigcap \famY} = \bigcap \setprnsep{\funcinvimg{f}{Y}}{Y \in \famY}}$
+      \end{thmenum}
+    }
+    \proof{
+      \subproof{\ref{lem:basic-property-of-funcinvimg|1}}{
+        定義より明らかである．\qed
+      }
+      \subproof{\ref{lem:basic-property-of-funcinvimg|2}}{
+        $Y \subseteq B$ とし，このもとで $y \in \funcimg{f}{\funcinvimg{f}{Y}}$ とすると，
+        像の定義より或る $x \in \funcinvimg{f}{Y}$ が存在して $y = \app{f}{x}$ である．
+        このとき逆像の定義より $\app{f}{x} \in Y$，すなわち $y \in Y$ であり，
+        また $x \in A$ と像の定義より $y = \app{f}{x} \in \funcimg{f}{A}$ であるから $y \in \funcimg{f}{A} \cap Y$．
+        $y$ は任意であったから $\funcimg{f}{\funcinvimg{f}{Y}} \subseteq \funcimg{f}{A} \cap Y$ が成り立つ．
+        逆に $y \in \funcimg{f}{A} \cap Y$ とすると，
+        まず $y \in \funcimg{f}{A}$ と像の定義より或る $x \in A$ が存在して $y = \app{f}{x}$ である．
+        ここで $y \in Y$ より $\app{f}{x} \in Y$ であり，逆像の定義より $x \in \funcinvimg{f}{Y}$ が成り立つ．
+        よって像の定義より $\app{f}{x} \in \funcimg{f}{\funcinvimg{f}{Y}}$，
+        すなわち $y \in \funcimg{f}{\funcinvimg{f}{Y}}$．
+        $y$ は任意であったから $\funcimg{f}{A} \cap Y \subseteq \funcimg{f}{\funcinvimg{f}{Y}}$ が成り立つ．
+        以上より $\funcimg{f}{\funcinvimg{f}{Y}} = \funcimg{f}{A} \cap Y$ である．\qed
+      }
+      \subproof{\ref{lem:basic-property-of-funcinvimg|3}}{
+        $Y \subseteq B$ とし，このもとで $x \in \funcinvimg{f}{B \setmns Y}$ とすると，逆像の定義より $\app{f}{x} \in B \setmns Y$．
+        このとき $\app{f}{x} \not\in Y$ であるから逆像の定義より $x \not\in \funcinvimg{f}{Y}$ であり，
+        したがって $x \in A \setmns \funcinvimg{f}{Y}$．$x$ は任意であったから
+        $\funcinvimg{f}{B \setmns Y} \subseteq A \setmns \funcinvimg{f}{Y}$ が成り立つ．
+        逆に $x \in A \setmns \funcinvimg{f}{Y}$ とすると，$x \not\in \funcinvimg{f}{Y}$ より $\app{f}{x} \not\in Y$，
+        すなわち $\app{f}{x} \in B \setmns Y$ であるから，逆像の定義より $x \in \funcinvimg{f}{B \setmns Y}$ が成り立つ．
+        やはり $x$ は任意であったから $A \setmns \funcinvimg{f}{Y} \subseteq \funcinvimg{f}{B \setmns Y}$ である．
+        以上より $\funcinvimg{f}{B \setmns Y} = A \setmns \funcinvimg{f}{Y}$ が成り立つ．\qed
+      }
+      \subproof{\ref{lem:basic-property-of-funcinvimg|4}}{
+        $\famY \subseteq \Power{B}$ とし，このもとで $\displaystyle x \in \funcinvimg{f}{\bigcup \famY}$ とすると，
+        逆像の定義より $\displaystyle \app{f}{x} \in \bigcup \famY$ であり，或る $Y \in \famY$ が存在して $\app{f}{x} \in Y$ を満たす．
+        すなわちこの $Y$ をとると $x \in \funcinvimg{f}{Y}$ であり，
+        したがって $\displaystyle x \in \bigcup \setprnsep{\funcinvimg{f}{Y}}{Y \in \famY}$ が成り立つ．
+        $x$ は任意であったから
+        $\displaystyle \funcinvimg{f}{\bigcup \famY} \subseteq \bigcup \setprnsep{\funcinvimg{f}{Y}}{Y \in \famY}$
+        である．逆に $\displaystyle x \in \bigcup \setprnsep{\funcinvimg{f}{Y}}{Y \in \famY}$ とすると，
+        或る $Y \in \famY$ が存在して $x \in \funcinvimg{f}{Y}$，すなわち $\app{f}{x} \in Y$ を満たす．
+        この $Y$ をとると $\displaystyle Y \subseteq \bigcup \famY$ より $\displaystyle \app{f}{x} \in \bigcup \famY$ であり，
+        したがって $\displaystyle x \in \funcinvimg{f}{\bigcup \famY}$ が成り立つ．
+        やはり $x$ は任意であったから
+        $\displaystyle \bigcup \setprnsep{\funcinvimg{f}{Y}}{Y \in \famY} \subseteq \funcinvimg{f}{\bigcup \famY}$
+        である．以上より
+        $\displaystyle \funcinvimg{f}{\bigcup \famY} = \bigcup \setprnsep{\funcinvimg{f}{Y}}{Y \in \famY}$
+        が成り立つ．\qed
+      }
+      \subproof{\ref{lem:basic-property-of-funcinvimg|5}}{
+        $\famY \subseteq \Power{B}$ とし，このもとで $\displaystyle x \in \funcinvimg{f}{\bigcap \famY}$ とすると，
+        逆像の定義より $\displaystyle \app{f}{x} \in \bigcap \famY$ であり，任意の $Y \in \famY$ に対して $\app{f}{x} \in Y$ を満たす．
+        すなわち任意の $Y \in \famY$ に対して $x \in \funcinvimg{f}{Y}$ であり，
+        $\displaystyle x \in \bigcap \setprnsep{\funcinvimg{f}{Y}}{Y \in \famY}$ が成り立つ．
+        $x$ は任意であったから
+        $\displaystyle \funcinvimg{f}{\bigcap \famY} \subseteq \bigcap \setprnsep{\funcinvimg{f}{Y}}{Y \in \famY}$
+        である．逆に $\displaystyle x \in \bigcap \setprnsep{\funcinvimg{f}{Y}}{Y \in \famY}$ とすると，
+        任意の $Y \in \famY$ に対して $x \in \funcinvimg{f}{Y}$ すなわち $\app{f}{x} \in Y$ が成り立つ．
+        したがって $\displaystyle \app{f}{x} \in \bigcap \famY$ であり，
+        $\displaystyle x \in \funcinvimg{f}{\bigcap \famY}$ が成り立つ．
+        やはり $x$ は任意であったから
+        $\displaystyle \bigcap \setprnsep{\funcinvimg{f}{Y}}{Y \in \famY} \subseteq \funcinvimg{f}{\bigcap \famY}$
+        である．以上より
+        $\displaystyle \funcinvimg{f}{\bigcap \famY} = \bigcap \setprnsep{\funcinvimg{f}{Y}}{Y \in \famY}$
+        が成り立つ．\qed
+      }
+    }
+  \subsection{可算集合}
+    \defpar{有限}{
+      集合 $X$ に対し，或る $n \in \setN$ が存在して $X \cong \Natleq{n}$ を満たすとき，
+      $X$ は\newwordjaen{有限}{finite}であるとか\newwordjaen{有限集合}{finite set}であるという．
+    }
+    \defpar{可算，高々可算}{
+      集合 $X$ が $X \cong \setNpos$ を満たすとき，
+      $X$ は\newwordjaen{可算}{countable}であるとか\newwordjaen{可算集合}{countable set}であるという．
+      集合 $X$ が有限または可算であるとき，$X$ は\newwordjaen{高々可算}{}であるという．
+    }
+    \propdefpar{}{
+      集合 $X$ に対し，$X$ の部分集合で有限であるもの全体は集合をなす．これを $\Powerfin{X}$ と書く．
+      また，$X$ の部分集合で高々可算であるもの全体も集合をなす．これを $\Powercnt{X}$ と書く．
+    }
+    \lempar{}{
+      $A$ が高々可算ならば，$B \subseteq A$ なる集合 $B$ は高々可算である．
+    }
+    \TODO{証明}
+    \plainpar{
+      高々可算な集合族は，“集合族そのものとしての表示”である $\famA$ と
+      “集合の列としての表示”である全射 $\funcdoms{A_{\dummysub}}{\setNpos}{\famA}$ とがある．
+      本稿では，原則として元の排列順を区別しなくてよい場合は前者を，区別しなければならない場合は後者をそれぞれ用いる方針をとる．
+    }
+  \subsection{位相空間}
+    \defpar{位相空間}{
+      集合 $S$ に対し，$\topO \subseteq \Power{S}$ が
+      \begin{align*}
+      \tag{O1}\label{axiom:O1}
+      &
+        \lfland{\varnothing \in \topO}{S \in \topO}
+      \\
+      \tag{O2}\label{axiom:O2}
+      &
+        \forallsub{\famU}{\topO}{\bigcup \famU \in \topO}
+      \\
+      \tag{O3}\label{axiom:O3}
+      &
+        \forallin{U|V}{\topO}{U \cap V \in \topO}
+      \end{align*}
+      をいずれも満たすとき，$\topO$ を $S$ 上の\newwordjaen{位相}{topology}或いは\newwordjaen{開集合系}{}と呼び，
+      $\seqprn{S, \topO}$ を\newwordjaen{位相空間}{topological space}と呼ぶ．
+    }
+    \lempar{}{
+      集合 $S$ と $\topO \subseteq \Power{S}$ に対し，以下は同値．
+      \begin{align*}
+      \tag{O2}
+      &
+        \forallsub{\famU}{\topO}{\bigcup \famU \in \topO}
+      \\
+      \tag{O2${}^\prime$}\label{axiom:O2'}
+      &
+        \forallsub{X}{S}{\lflimpl{\forallin{x}{X}{\existsin{V}{\topO}{x \in V \subseteq X}}}{X \in \topO}}
+      \end{align*}
+    }
+    \proof{
+      \subproof{\eqref{axiom:O2}$\limpl$\eqref{axiom:O2'}}{
+        $X \subseteq S$ が，任意の $x \in X$ に対して或る $V \in \topO$ が存在して $x \in V \subseteq X$ であることを満たすとする．
+        このとき $\famV_{X} \defeq \setprnsep{V \in \topO}{V \subseteq X}$ で $\famV_{X} \subseteq \topO$ を定めると，
+        仮定より $\displaystyle \bigcup \famV_{X} = X$ が成り立つ．
+        \eqref{axiom:O2}より $\displaystyle \bigcup \famV_{X} \in \topO$ であり，ゆえに $X \in \topO$ が成り立つ．\qed
+      }
+      \subproof{\eqref{axiom:O2}$\backlimpl$\eqref{axiom:O2'}}{
+        $\famU \subseteq \topO$ とすると，
+        $\displaystyle \bigcup \famU$ の定義より明らかに，
+        任意の $\displaystyle x \in \bigcup \famU$ に対して或る $V \in \famU \subseteq \topO$ が存在して
+        $\displaystyle x \in V \subseteq \bigcup \famU$ を満たす．
+        ゆえに\eqref{axiom:O2'}より $\displaystyle \bigcup \famU \in \topO$ が成り立つ．\qed
+      }
+    }
+    \lempar{}{
+      集合 $S$ と $\topO \subseteq \Power{S}$ に対し，以下は同値．
+      \begin{align*}
+      \tag{$S$+O3}\label{axiom:S+O3}
+      &
+        \lfland{S \in \topO}{\forallin{U|V}{\topO}{U \cap V \in \topO}}
+      \\
+      \tag{O3${}^\prime$}\label{axiom:O3'}
+      &
+        \forallin{\famU}{\Powerfin{\topO}}{\bigcap \famU \in \topO}
+      \end{align*}
+    }
+    \proof{
+      \subproof{\eqref{axiom:S+O3}$\limpl$\eqref{axiom:O3'}}{
+        有限の集合族 $\famU \in \Powerfin{\topO}$ の濃度 $\card{\famU} \in \setN$ に関する帰納法による．
+        \begin{itemize}
+        \item $\card{\famU} = 0$ のとき，
+          $\displaystyle \bigcap \famU = \bigcap \varnothing = S \in \topO$ である．
+        \item $\card{\famU} \geq 1$ のとき，
+          $U \in \famU$ がとれる．ここで $\famV \defeq \famU \setmns \setprn{U}$ とすると，
+          $\card{\famV} < \card{\famU}$ から帰納法の仮定より $\displaystyle \bigcap \famV \in \topO$ が成り立つ．
+          ゆえに $\displaystyle \bigcap \famU = U \cap \bigcap \famV \in \topO$ が\eqref{axiom:S+O3}より成り立つ．
+        \end{itemize}
+        以上より任意の $\famU \in \Powerfin{\topO}$ に対して $\displaystyle \bigcap \famU \in \topO$ である．\qed
+      }
+      \subproof{\eqref{axiom:S+O3}$\backlimpl$\eqref{axiom:O3'}}{
+        $U, V \in \topO$ に対し，\eqref{axiom:O3'}より
+        $\displaystyle U \cap V = \bigcap \setprn{U, V} \in \topO$ が成り立つ．\qed
+      }
+    }
+    \lempar[lem:generated-topology]{集合族から生成される位相空間}{
+      集合 $S$ と $\famU \subseteq \Power{S}$ に対し，
+      \begin{align*}
+        \appv{\tau}{\famU} \defeq
+          \setprnsep{X \subseteq S}{\forallin{x}{X}{\existsin{\famA}{\Powerfin{\famU}}{x \in \bigcap \famA \subseteq X}}}
+      \end{align*}
+      で定められる $\appv{\tau}{\famU}$ は $S$ 上の位相．
+      すなわち $\seqprn{S, \appv{\tau}{\famU}}$ は位相空間である．
+    }
+    \TODO{証明}
+    \defpar{集合族から生成される位相空間}{
+      集合 $S$ と $\famU \subseteq \Power{S}$ に対して補題~\ref{lem:generated-topology}に基づいて定義される
+      位相空間 $\seqprn{S, \appv{\tau}{\famU}}$ を，$\famU$ から\newwordjaen{生成}{generate}される位相空間と呼ぶ．
+      また，この $\funcdoms{\tau}{\Power{S}}{\Power{S}}$ を $S$ 上の\newwordjaen{位相生成演算子}{}と呼ぶことにする．
+    }
+    \lempar{位相生成演算子}{
+      集合 $S$ 上の位相生成演算子 $\tau$ に対し，
+      \begin{align*}
+      \tag{\textsc{T-Augm}}\label{axiom:t-augm}
+        \forallsub[1]{\famU}{\Power{S}}{\famU \subseteq \appv{\tau}{\famU}}
+      \\
+      \tag{\textsc{T-Mono}}\label{axiom:t-mono}
+        \forallsub[1]{\famU|\famV}{\Power{S}}{\lflimpl{\famU \subseteq \famV}{\appv{\tau}{\famU} \subseteq \appv{\tau}{\famV}}}
+      \\
+      \tag{\textsc{T-Idem}}\label{axiom:t-idem}
+        \forallsub[1]{\famU}{\Power{S}}{\appv{\tau}{\appv{\tau}{\famU}} = \appv{\tau}{\famU}}
+      \end{align*}
+      がいずれも成り立つ．すなわち $\tau$ は分配束 $\seqprn{\Power{\Power{S}}, \cup, \cap}$ 上の閉包演算子である．
+    }
+    \proof{
+      \subproof{\eqref{axiom:t-augm}}{
+        $\famU \subseteq \Power{S}$ とする．$X \in \famU$ とすると，任意の $x \in X$ に対して $\setprn{X} \in \Powerfin{\famU}$ が
+        $\displaystyle x \in \bigcap \setprn{X} \subseteq X$ を満たすので $X \in \appv{\tau}{\famU}$ である．
+        ゆえに $\famU \subseteq \appv{\tau}{\famU}$．\qed
+      }
+      \subproof{\eqref{axiom:t-mono}}{
+        $\famU, \famV \subseteq \Power{S}$ が $\famU \subseteq \famV$ を満たすとする．
+        $X \in \appv{\tau}{\famU}$ とすると，任意の $x \in X$ に対して或る
+        $\famA \in \Powerfin{\famU}$ が存在して $\displaystyle x \in \bigcap \famA \subseteq X$ を満たすが，
+        $\Powerfin{\famU} \subseteq \Powerfin{\famV}$ より
+        各 $x \in X$ に対してこの $\famA$ は $\famA \in \Powerfin{\famV}$ も満たすから，$X \in \appv{\tau}{\famV}$ が成り立つ．
+        ゆえに $\appv{\tau}{\famU} \subseteq \appv{\tau}{\famV}$ である．\qed
+      }
+      \subproof{\eqref{axiom:t-idem}}{
+        $\famU \subseteq \Power{S}$ とする．$\appv{\tau}{\famU} \subseteq \appv{\tau}{\appv{\tau}{\famU}}$ は
+        既に示した\eqref{axiom:t-augm}より従うから，$\appv{\tau}{\appv{\tau}{\famU}} \subseteq \appv{\tau}{\famU}$ を示す．
+        $X \in \appv{\tau}{\appv{\tau}{\famU}}$ とし，任意に $x \in X$ とすると，或る $\famA \in \Powerfin{\appv{\tau}{\famU}}$
+        が存在して $\displaystyle x \in \bigcap \famA \subseteq X$ を満たす．
+        このような $\famA$ をとって $k \defeq \card{\famA} \in \setN$ とし，
+        $\famA = \setprn{A_{1}, \ldots A_{k}}$ と $\Natleq{k}$ で添字づけると，
+        各 $A_{i} \in \famA$ は $A_{i} \in \appv{\tau}{\famU}$ を満たし，
+        したがって或る $\famB_{i} \in \Powerfin{\famU}$ が存在して $\displaystyle x \in \bigcap \famB_{i} \subseteq A_{i}$ を満たす．
+        このように選択公理によって添字づけられた $\famB_{1}, \ldots, \famB_{k}$ は有限個の有限集合族であるから
+        \begin{align*}
+          \bigcup \setprnsep{\famB_{i}}{i \in \Natleq{k}} = \famB_{1} \cup \cdots \cup \famB_{k} \in \Powerfin{\famU}
+        \end{align*}
+        が成り立ち，これは
+        \begin{align*}
+           x \in \bigcap \bigcup \setprnsep{\famB_{i}}{i \in \Natleq{k}}
+             = \bigcap \setprnsep{\bigcap \famB_{i}}{i \in \Natleq{k}}
+               \subseteq \bigcap \setprnsep{A_{i}}{i \in \Natleq{k}}
+                 = \bigcap \famA
+                   \subseteq X
+        \end{align*}
+        より $\displaystyle x \in \bigcap \bigcup \setprnsep{\famB_{i}}{i \in \Natleq{k}} \subseteq X$ を満たす．
+        $x \in X$ は任意であったから，$X \in \appv{\tau}{\famU}$ が成り立つ．
+        ゆえに $\appv{\tau}{\appv{\tau}{\famU}} \subseteq \appv{\tau}{\famU}$ である．\qed
+      }
+    }
+    \defpar{開近傍}{
+      位相空間 $T = \seqprn{S, \topO}$ と $x \in S$ に対し，$x \in U$ なる開集合 $U \in \topO$ を
+      $T$ に於ける $x$ の\newwordjaen{開近傍}{open neighbourhood}と呼ぶ．$x \in S$ の $T$ に於ける開近傍全体からなる集合族を
+      $\opneighb{T}{x}$ と書く．すなわち $\opneighb{T}{x} \defeq \setprnsep{U \in \topO}{x \in U}$ である．
+      特に $\setprn{x} \in \opneighb{T}{x}$ なる $x \in S$ を $T$ の\newwordjaen{孤立点}{isolated point}であるという．
+    }
+    \defpar{連続性}{
+      位相空間 $T_{1} = \seqprn{S_{1}, \topO_{1}}$ と $T_{2} = \seqprn{S_{2}, \topO_{2}}$ に対し，
+      $\funcdoms{f}{S_{1}}{S_{2}}$ が任意の $U \in \topO_{2}$ に対して $\funcinvimg{f}{U} \in \topO_{1}$ を満たすとき，
+      $f$ を $T_{1}$ から $T_{2}$ への\newwordjaen{連続写像}{continuous map}であるという．
+      $T_{1}$ から $T_{2}$ への連続写像全体を $\Cont{T_{1}}{T_{2}}$ と書く．すなわち
+      \begin{align*}
+        \Cont{T_{1}}{T_{2}} \defeq \setprnsep{\funcdoms{f}{S_{1}}{S_{2}}}{\forallin{U}{\topO_{2}}{\funcinvimg{f}{U} \in \topO_{1}}}
+      \end{align*}
+      である．また，$\funcdoms{f}{S_{1}}{S_{2}}$ と $a \in S_{1}$ が
+      \begin{align*}
+        \forallin{V}{\opneighb{T_{2}}{\app{f}{a}}}{\existsin{U}{\opneighb{T_{1}}{a}}{U \subseteq \funcinvimg{f}{V}}}
+      \end{align*}
+      を満たすとき，$f$ は $T_{1}$ から $T_{2}$ に向けて $a$ で\newwordjaen{連続}{continuous}であるという．
+    }
+    \lempar{}{
+      位相空間 $T_{1} = \seqprn{S_{1}, \topO_{1}}$ と $T_{2} = \seqprn{S_{2}, \topO_{2}}$ および
+      写像 $\funcdoms{f}{S_{1}}{S_{2}}$ に対し，以下は同値．
+      \begin{thmenum}
+      \thmenumitem $f$ は $T_{1}$ から $T_{2}$ への連続写像．
+      \thmenumitem 任意の $x \in S_{1}$ に対し，$f$ は $T_{1}$ から $T_{2}$ に向けて $x$ で連続．
+      \end{thmenum}
+    }
+    \TODO{証明}
+    \propdefpar[propdef:induced-topology]{誘導位相}{
+      位相空間 $\seqprn{S, \topO}$ と写像 $\funcdoms{f}{A}{S}$ に対し，
+      $\appv{f^*}{\topO} \defeq \setprnsep{\funcinvimg{f}{U}}{U \in \topO}$ は $A$ 上の位相である．
+      この $\appv{f^*}{\topO}$ を $f$ による $\topO$ からの\newwordjaen{誘導位相}{induced topology}，
+      或いは $f$ による $\topO$ からの\newwordjaen{引き戻し位相}{pullback}と呼ぶ．
+    }
+    \proof{
+      まず $S \in \topO$ より $\appv{f^*}{\topO} \ni \funcinvimg{f}{S} = A$ であり，\eqref{axiom:O1}が成り立つ．
+      次に $\famX \subseteq \app{f^*}{\topO}$ とすると，定義より
+      $\famX = \setprnsep{\funcinvimg{f}{U}}{U \in \famU}$ なる $\famU \subseteq \topO$ が存在する．
+      ここで補題~\ref{lem:basic-property-of-funcinvimg}より
+      $\displaystyle \bigcup \famX = \bigcup \setprnsep{\funcinvimg{f}{U}}{U \in \famU} = \funcinvimg{f}{\bigcup \famU}$
+      であり，$\topO$ の\eqref{axiom:O2}より $\displaystyle \bigcup \famU \in \topO$ であるから
+      $\displaystyle \bigcup \famX \in \appv{f^*}{\topO}$ が成り立ち，$\appv{f^*}{\topO}$ は\eqref{axiom:O2}を満たす．
+      最後に $X, Y \in \appv{f^*}{\topO}$ とすると，定義より $X = \funcinvimg{f}{U}$，$Y = \funcinvimg{f}{V}$ なる
+      $U, V \in \topO$ がそれぞれ存在する．やはり補題~\ref{lem:basic-property-of-funcinvimg}より
+      $X \cap Y = \funcinvimg{f}{U} \cap \funcinvimg{f}{V} = \funcinvimg{f}{U \cap V}$ であり，
+      $\topO$ の\eqref{axiom:O3} より $U \cap V \in \topO$ であるから $X \cap Y \in \appv{f^*}{\topO}$ が成り立ち，
+      $\app{f^*}{\topO}$ は\eqref{axiom:O3}を満たす．
+      ゆえに $\appv{f^*}{\topO}$ は $A$ 上の位相である．\qed
+    }
+    \plainpar{
+      $f$ による誘導位相は，$f$ を連続写像にするように始域に入れられる最も粗い位相であるといえる．
+    }
+    \propdefpar{像位相}{
+      位相空間 $\seqprn{S, \topO}$ と写像 $\funcdoms{f}{S}{B}$ に対し，
+      $\topO' \defeq \setprnsep{Y \subseteq B}{\funcinvimg{f}{Y} \in \topO}$ は $B$ 上の位相である．
+      この $\topO'$ を $f$ による $\topO$ の\newwordjaen{像位相}{}と呼ぶ．
+    }
+    \proof{
+      まず $\funcinvimg{f}{B} = S \in \topO$ より\eqref{axiom:O1}：$B \in \topO'$ が成り立つ．
+      次に $\famU \subseteq \topO'$ とすると，
+      任意の $U \in \famU$ に対して $\funcinvimg{f}{U} \in \topO$．
+      ここで補題~\ref{lem:basic-property-of-funcinvimg}と $\topO$ の\eqref{axiom:O2}より
+      $\displaystyle \funcinvimg{f}{\bigcup \famU} = \bigcup \setprnsep{\funcinvimg{f}{U}}{U \in \famU} \in \topO$ であり，
+      $\displaystyle \bigcup \famU \in \topO'$ が成り立つから $\topO'$ は\eqref{axiom:O2}を満たす．
+      最後に $U, V \in \topO'$ とすると，$\funcinvimg{f}{U} \in \topO$，$\funcinvimg{f}{V} \in \topO$ である．
+      やはり補題~\ref{lem:basic-property-of-funcinvimg}と $\topO$ の\eqref{axiom:O3}より
+      $\funcinvimg{f}{U \cap V} = \funcinvimg{f}{U} \cap \funcinvimg{f}{V} \in \topO$ が成り立ち，
+      したがって $U \cap V \in \topO'$ であるから $\topO'$ は\eqref{axiom:O3}を満たす．
+      ゆえに $\topO'$ は $B$ 上の位相である．\qed
+    }
+    \plainpar{
+      $f$ による像位相は，$f$ を連続写像にするように終域に入れられる最も細かい位相であるといえる．
+    }
+    \propdefpar{相対位相}{
+      位相空間 $\seqprn{S, \topO}$ と $A \subseteq S$ に対し，
+      $\topO_{\cap A} \defeq \setprnsep{U \cap A}{U \in \topO}$
+      は $A$ 上の位相である．この $\topO_{\cap A}$ を $\topO$ の $A$ による\newwordjaen{相対位相}{relative topology}と呼ぶ．
+    }
+    \proof{
+      包含写像 $\funcdoms{i}{A}{S}$ を考えると，明らかに $\topO_{\cap A} = \appv{i^*}{\topO}$ が成り立つ．
+      これはすなわち $i$ による $\topO$ からの誘導位相である．よって定義~\ref{propdef:induced-topology}より
+      $\topO_{\cap A}$ は $A$ 上の位相である．\qed
+    }
+    \defpar{閉集合，近傍，内点}{
+      位相空間 $T = \seqprn{S, \topO}$ に於いて，
+      $S \setmns X \in \topO$ なる $X \subseteq S$ は $T$ の\newwordjaen{閉集合}{}であるという．
+      また，$x \in S$ と $A \subseteq S$ に対して或る $U \in \opneighb{T}{x}$ が存在して $U \subseteq A$ を満たすとき，
+      すなわち $A$ が或る $x$ の開近傍を包むとき，$A$ は $T$ に於いて $x$ の\newwordjaen{近傍}{neighbour}であるといい，
+      同時に $x$ は $T$ に於いて $A$ の\newwordjaen{内点}{interior point}であるという．
+    }
+    \defpar{閉包，閉包演算子，開核，開核演算子}{
+      位相空間 $T = \seqprn{S, \topO}$ に於いて，$A \subseteq S$ に対して
+      \begin{align*}
+        \topcls{A} \defeq \setprnsep{x \in S}{\forallin{U}{\opneighb{T}{x}}{U \cap A \neq \varnothing}}
+      \end{align*}
+      で定められる $\topcls{A}$ を $T$ に於ける $A$ の\newwordjaen{閉包}{closure}と呼び，
+      この写像 $\funcdoms{\topcls{\paren{\dummysign}}}{\Power{S}}{\Power{S}}$ を
+      $T$ に於ける\newwordjaen{閉包演算子}{closure operator}と呼ぶ．
+      また，$A \subseteq S$ に対して
+      \begin{align*}
+        \topker{A} \defeq \setprnsep{x \in S}{\existsin{U}{\opneighb{T}{x}}{U \subseteq A}}
+      \end{align*}
+      で定められる $\topker{A}$，すなわち $T$ に於ける $A$ の内点全体からなる集合を
+      $T$ に於ける $A$ の\newwordjaen{開核}{open kernel}或いは\newwordjaen{内部}{interior}と呼び，
+      この写像 $\funcdoms{\topker{\paren{\dummysign}}}{\Power{S}}{\Power{S}}$ を
+      $T$ に於ける\newwordjaen{開核演算子}{kernel operator}と呼ぶ．
+    }
+    \lempar{閉包と開核の性質}{
+      位相空間 $T = \seqprn{S, \topO}$ に於いて，以下がそれぞれ成り立つ．
+      \begin{thmenum}
+      \thmenumitem 任意の $A \subseteq S$ に対し，閉包 $\topcls{A}$ は $A$ を包む $T$ の閉集合で一意的に極小なものである．
+      \thmenumitem 任意の $A \subseteq S$ に対し，開核 $\topker{A}$ は $A$ に包まれる $T$ の開集合で一意的に極大なものである．
+      \end{thmenum}
+    }
+  \subsection{距離空間}
+    \defpar{距離空間}{
+      集合 $S$ と写像 $\funcdoms{\distfunc}{S \times S}{\setRnonneg}$ が
+      \begin{align*}
+      \tag{D1}\label{axiom:D1}
+        \forallin[1]{x|y}{S}{\app{\distfunc}{x, y} = \app{\distfunc}{y, x}}
+      \\
+      \tag{D2}\label{axiom:D2}
+        \forallin[1]{x|y|z}{S}{\app{\distfunc}{x, y} + \app{\distfunc}{y, z} \geq \app{\distfunc}{x, z}}
+      \\
+      \tag{D3}\label{axiom:D3}
+        \forallin[1]{x|y}{S}{\lflimpleqv{\app{\distfunc}{x, y} = 0}{x = y}}
+      \end{align*}
+      をいずれも満たすとき，$\distfunc$ を $S$ 上の\newwordjaen{距離}{metric}と呼び，
+      組 $\seqprn{S, \distfunc}$ を\newwordjaen{距離空間}{metric space}と呼ぶ．
+    }
+    \defpar{開球}{
+      距離空間 $T = \seqprn{S, \distfunc}$ に於いて，$a \in S$ と $r \in \setRpos$ に対して
+      \begin{align*}
+        \Ball{T}{a}{r} \defeq \setprnsep{x \in S}{\app{\distfunc}{a, x} < r}
+      \end{align*}
+      で定められる $\Ball{T}{a}{r} \subseteq S$ を $T$ に於ける中心 $a$，半径 $r$ の\newwordjaen{開球}{}と呼ぶ．
+    }
+    \defpar{開集合}{
+      距離空間 $T = \seqprn{S, \distfunc}$ に対し，$U \subseteq S$ が
+      任意の $x \in U$ に対して或る $r \in \setRpos$ が存在して $\Ball{T}{x}{r} \subseteq U$ であることを満たすとき，
+      $U$ を距離空間 $T$ に於ける\newwordjaen{開集合}{}と呼ぶ．
+    }
+    \defpar{距離の定める位相}{
+      距離空間 $T = \seqprn{S, \distfunc}$ に対し，$T$ の開球全体から生成される位相，すなわち
+      \begin{align*}
+        \topO \defeq \appv{\tau}{\setprnsep{\Ball{T}{x}{r}}{\lfland{x \in S}{r \in \setRpos}}}
+      \end{align*}
+      を $\distfunc$ が定める $S$ 上の位相と呼ぶ．
+    }
+    \lempar{}{
+      距離空間 $T = \seqprn{S, \distfunc}$ に対し，$\distfunc$ の定める位相を $\topO$ とおくと
+      \begin{align*}
+        \forallsub{U}{S}{\lflimpleqv{U \in \topO}{\forallin{x}{U}{\existsin{r}{\setRpos}{\Ball{T}{x}{r} \subseteq U}}}}
+      \end{align*}
+      が成り立つ．すなわち，任意の $U \subseteq S$ に対し，$U$ が位相空間 $\seqprn{S, \topO}$ に於ける開集合であることと，
+      $U$ が距離空間 $T$ に於ける開集合であることは同値．
+    }
+    \proof{
+      \subproof{$\limpl$}{
+        $U \in \topO$ とし，任意に $x \in U$ とする．このとき，$\distfunc$ の定める位相 $\topO$ の定義より
+        或る $k \in \setN$ と $x_{1}, \ldots, x_{k} \in S$ と $r_{1}, \ldots, r_{k} \in \setRpos$ が存在して
+        $\displaystyle x \in \bigcap \setprn{\Ball{T}{x_{1}}{r_{1}}, \ldots, \Ball{T}{x_{k}}{r_{k}}} \subseteq U$ を満たす．
+        \begin{itemize}
+        \item $k = 0$ のとき，
+          $\displaystyle \bigcap \varnothing = S \subseteq U$ より $U = S$ であり，
+          $\Ball{T}{x}{500000000} \subseteq S = U$ である．
+        \item $k \geq 1$ のとき，
+          $r \defeq \min \setprn{r_{1} - \app{\distfunc}{x_{1}, x}, \ldots, r_{k} - \app{\distfunc}{x_{k}, x}}$
+          とすると，$r > 0$ であって
+          \begin{align*}
+            \Ball{T}{x}{r} \subseteq \bigcap \setprn{\Ball{T}{x_{1}}{r_{1}}, \ldots, \Ball{T}{x_{k}}{r_{k}}} \subseteq U
+          \end{align*}
+          が成り立つ．
+        \end{itemize}
+        以上よりいずれの場合も $\Ball{T}{x}{r} \subseteq U$ なる $r \in \setRpos$ が存在する．\qed
+      }
+      \subproof{$\backlimpl$}{
+        $U \subseteq S$ とする．任意の $x \in U$ に対して或る $r \in \setRpos$ が存在して $\Ball{T}{x}{r} \subseteq U$ を満たし，
+        したがって $\displaystyle x \in \bigcap \setprn{\Ball{T}{x}{r}} \subseteq U$
+        であるから，$\distfunc$ の定める位相 $\topO$ の定義より $U \in \topO$ が成り立つ．\qed
+      }
+    }
+    \plainpar{
+      これ以降距離空間 $T = \seqprn{S, \distfunc}$ は位相空間の特殊な場合であると看なし，
+      距離 $\distfunc$ の定める位相 $\topO$ を添えて $T = \seqprn{S, \distfunc; \topO}$ としてよいとする．
+    }
+    \defpar{}{
+      $d$ 次元Euclid空間 $\Euclid{d} = \seqprn{\setR^{d}, \distfunc_{d}; \topO_{d}}$ に於ける閉包演算子を
+      $\funcdoms{\topcls{\paren{\dummysign}}}{\Power{\paren{\setR^{d}}}}{\Power{\paren{\setR^{d}}}}$ とし，
+      $A \subseteq \setR^{d}$，$\funcdoms{f}{A}{\setR^{m}}$，$B \subseteq A$，$b \in \topcls{B}$，$c \in \setR^{m}$ に対して
+      \begin{align*}
+        \forallin{\epsilon}{\setRpos}{\existsin{\delta}{\setRpos}{\forallin{x}{B}{
+          \lflimpl{\app{\distfunc_{d}}{x - b} < \delta}{\app{\distfunc_{n}}{\app{f}{x} - c} < \epsilon}
+        }}}
+      \end{align*}
+      が成り立つとき，$c$ を $B$ 内で $b$ に近づくときの $f$ の\newwordjaen{極限}{limit}と呼び，
+      $\displaystyle \lim_{\substack{x \to b \\ x \in B}}^{\scriptrange{\Euclid{d}}} \app{f}{x}$ と書く．
+    }
+\section{確率空間}
+  \subsection{可測空間}
+    \defpar{補集合演算}{
+      非空集合 $\Omega$ に対して $\compl{A} \defeq \Omega \setmns A$ で定められる
+      演算 $\funcdoms{\compl{\paren{\dummysign}}}{\Power{\Omega}}{\Power{\Omega}}$ を
+      $\Omega$ に関する\newwordjaen{補集合演算}{complement operator}と呼ぶ．
+    }
+    \defpar{$\sigma$-集合族，可測空間}{
+      非空集合 $\Omega$ と $\Omega$ に関する補集合演算 $\compl{\paren{\dummysign}}$ に対し，
+      $\famB \subseteq \Power{\Omega}$ が
+      \begin{align*}
+      \tag{B1}\label{axiom:B1}
+      &
+        \Omega \in \famB
+      \\[0.25em]%(nonsemantic)
+      \tag{B2}\label{axiom:B2}
+      &
+        \forallin{A}{\famB}{\compl{A} \in \famB}
+      \\
+      \tag{B3}\label{axiom:B3}
+      &
+        \forallin{\famA}{\Powercnt{\famB}}{\bigcup \famA \in \famB}
+      \end{align*}
+      をいずれも満たすとき，$\famB$ を $\Omega$ 上の\newwordjaen{$\sigma$-集合族}{$\sigma$-family}と呼ぶ．
+      $\Omega$ 上の $\sigma$-集合族全体を $\SFover{\Omega}$ と書くことにする．
+      また，$\Omega$ と $\Omega$ 上の $\sigma$-集合族 $\famB$ の組 $\seqprn{\Omega, \famB}$ を
+      \newwordjaen{可測空間}{}と呼ぶ．
+    }
+    \lempar{可算部分集合による可測空間}{
+      非空集合 $\Omega$ と $\Omega$ に関する補集合演算 $\compl{\paren{\dummysign}}$ に対して
+      \begin{align*}
+        \famB_{\#} \defeq \setprnsep{A \subseteq \Omega}{\lflor{A \in \Powercnt{\Omega}}{\compl{A} \in \Powercnt{\Omega}}}
+      \end{align*}
+      で定められる $\seqprn{\Omega, \famB_{\#}}$ は可測空間である．すなわち $\famB_{\#} \in \SFover{\Omega}$．
+    }
+    \proof{
+      まず $\compl{\Omega} = \varnothing$ は高々可算であるから $\Omega \in \famB_{\#}$ すなわち\eqref{axiom:B1}が成り立ち，
+      \eqref{axiom:B2}は定義より明らかである．以下で\eqref{axiom:B3}を示す．$\famA \subseteq \famB$ を高々可算とする．
+      \begin{itemize}
+      \item 任意の $A \in \famA$ が高々可算であるとき，$\displaystyle \bigcup \famA$ は高々可算．
+      \item 或る $B \in \famA$ が非可算のとき，$B \in \famB_{\#}$ より $\compl{B}$ は高々可算であり，
+        $\displaystyle
+          \compl{\paren{\bigcup \famA}} = \bigcap \setprnsep{\compl{A}}{A \in \famA} \subseteq \compl{B}
+        $
+        より $\displaystyle \compl{\paren{\bigcup \famA}}$ は高々可算であるから $\displaystyle \bigcup \famA \in \famB_{\#}$．
+      \end{itemize}
+      以上よりいずれの場合も $\displaystyle \bigcup \famA \in \famB_{\#}$ であり，$\famB_{\#}$ は\eqref{axiom:B3}を満たす．
+      ゆえに $\famB_{\#} \in \SFover{\Omega}$ である．\qed
+    }
+    \defpar{}{
+      集合の列 $A_{\dummysub}$ に対し，
+      \begin{align*}
+        \limsup_{k \to \infty} A_{k}
+          &\defeq \bigcap_{n = 1}^{\infty} \bigcup_{k = n}^{\infty} A_{k}
+            = \bigcap \setprnsep{\bigcup \setprnsep{A_{k}}{k \in \Natintvl{n}{\infty}}}{n \in \setNpos}
+      \\
+        \liminf_{k \to \infty} A_{k}
+          &\defeq \bigcup_{n = 1}^{\infty} \bigcap_{k = n}^{\infty} A_{k}
+            = \bigcup \setprnsep{\bigcap \setprnsep{A_{k}}{k \in \Natintvl{n}{\infty}}}{n \in \setNpos}
+      \end{align*}
+      と定める．
+    }
+    \plainpar{
+      $\limsup_{k \to \infty} A_{k}$，$\liminf_{k \to \infty}$ はそのままでは直観的に理解しづらいが，“内包的に”書けば
+      \begin{align*}
+        \omega \in \limsup_{k \to \infty} A_{k} &\iff \forallin{n}{\setNpos}{\existsin{k}{\setNpos}{\lfland{k \geq n}{\omega \in A_{k}}}}
+      \\
+        \omega \in \liminf_{k \to \infty} A_{k} &\iff \existsin{n}{\setNpos}{\forallin{k}{\setNpos}{\lflimpl{k \geq n}{\omega \in A_{k}}}}
+      \end{align*}
+      となる．すなわち $\omega \in \limsup_{k \to \infty} A_{k}$ は $\omega \in A_{k}$ なる $k \in \setNpos$ が可算無限個あることを，
+      $\omega \in \liminf_{k \to \infty} A_{k}$ は或る $n \in \setNpos$ 以上のすべての $k \in \setNpos$ が $\omega \in A_{k}$ を
+      満たすことをそれぞれ指している．
+    }
+    \lempar{可測空間の基本的性質}{
+      可測空間 $\seqprn{\Omega, \famB}$ に対し，以下がそれぞれ成り立つ．
+      \begin{align*}
+      \tag{B4}\label{axiom:B4}
+        \forallin[1]{\famA}{\Powercnt{\famB}}{\bigcap \famA \in \famB}
+      \\
+      \tag{B5}\label{axiom:B5}
+        \forallfunc[1]{A_{\dummysub}}{\setNpos}{\famB}{\limsup_{k \to \infty} A_{k} \in \famB}
+      \\
+      \tag{B6}\label{axiom:B6}
+        \forallfunc[1]{A_{\dummysub}}{\setNpos}{\famB}{\liminf_{k \to \infty} A_{k} \in \famB}
+      \end{align*}
+    }
+    \proof{
+      \subproof{\eqref{axiom:B4}}{
+        $\Omega$ に関する補集合演算を $\compl{\paren{\dummysign}}$ とおく．
+        $\famA \subseteq \famB$ を高々可算とすると，
+        全射な添字づけ $\funcdoms{A_{\dummysub}}{\setNpos}{\famA}$ が存在する．
+        各 $k \in \setNpos$ に対して $A_{k} \in \famB$ であり，\eqref{axiom:B2}より $\compl{A_{k}} \in \famB$ が成り立つ．
+        $\setprnsep{\compl{A_{k}}}{k \in \setNpos}$ は高々可算であるから，\eqref{axiom:B3}より
+        \begin{align*}
+          \famB \ni \bigcup \setprnsep{\compl{A_{k}}}{k \in \setNpos}
+            &= \compl{\paren{\bigcap \setprnsep{A_{k}}{k \in \setNpos}}}
+             = \compl{\paren{\bigcap \famA}}
+        \end{align*}
+        が成り立つ．ゆえに\eqref{axiom:B2}より $\displaystyle \bigcap \famA \in \famB$．\qed
+      }
+      \subproof{\eqref{axiom:B5}}{
+        $\funcdoms{A_{\dummysub}}{\setNpos}{\famB}$ とすると，
+        各 $n \in \setNpos$ に対して $\setprnsep{A_{k}}{k \in \Natintvl{n}{\infty}} \subseteq \famB$ は高々可算であるから
+        \eqref{axiom:B3}より $\displaystyle \bigcup \setprnsep{A_{k}}{k \in \Natintvl{n}{\infty}} \in \famB$．
+        ゆえに，既に示した\eqref{axiom:B4}より
+        \begin{align*}
+          \famB \ni \bigcap \setprnsep{\bigcup \setprnsep{A_{k}}{k \in \Natintvl{n}{\infty}}}{n \in \setNpos}
+            = \limsup_{k \to \infty} A_{k}
+        \end{align*}
+        が成り立つ．\qed
+      }
+      \subproof{\eqref{axiom:B6}}{\eqref{axiom:B5}と同様にして\eqref{axiom:B3}と\eqref{axiom:B4}より従う．\qed}
+    }
+    \lempar{可測空間の制限}{
+      可測空間 $\seqprn{\Omega, \famB}$ と $\Psi \subseteq \Omega$ に対し，
+      $\famB_{\cap \Psi} \defeq \setprnsep{B \cap \Psi}{B \in \famB}$ は $\Psi$ 上の $\sigma$-集合族である．
+      すなわち $\seqprn{\Psi, \famB_{\cap \Psi}}$ は可測空間．
+    }
+    \proof{
+      $\seqprn{\Omega, \famB}$ を可測空間，$\Psi \subseteq \Omega$ とする．
+      まず $\Psi = \Omega \cap \Psi \in \famB_{\cap \Psi}$ より\eqref{axiom:B1}が成り立つ．
+      次に $D \in \famB_{\cap \Psi}$ とすると $D = B \cap \Psi$ なる $B \in \famB$ が存在し，
+      $\famB$ の\eqref{axiom:B2}より $\Omega \setmns B \in \famB$．したがって
+      \begin{align*}
+        \Psi \setmns D = \Psi \setmns \paren{B \cap \Psi} = \Psi \setmns B = \paren{\Omega \setmns B} \cap \Psi \in \famB_{\cap \Psi}
+      \end{align*}
+      であり，\eqref{axiom:B2}が成り立つ．最後に\eqref{axiom:B3}を示す．$\famA \subseteq \famB_{\cap \Psi}$ を高々可算とすると，
+      $\famA = \setprnsep{B_{k} \cap \Psi}{k \in \setNpos}$ なる添字づけ $\funcdoms{B_{\dummysub}}{\setNpos}{\famB}$ が存在する．
+      このとき $\setprnsep{B_{k}}{k \in \setNpos} \subseteq \famB$ は高々可算であるから $\famB$ の\eqref{axiom:B3}より
+      $\displaystyle \bigcup \setprnsep{B_{k}}{k \in \setNpos} \in \famB$ が成り立ち，したがって
+      \begin{align*}
+        \bigcup \famA
+          = \bigcup \setprnsep{B_{k} \cap \Psi}{k \in \setNpos}
+            = \paren{\bigcup \setprnsep{B_{k}}{k \in \setNpos}} \cap \Psi \in \famB_{\cap \Psi}
+      \end{align*}
+      である．ゆえに $\famB_{\cap \Psi}$ は\eqref{axiom:B3}を満たす．
+      以上より $\famB_{\cap \Psi}$ は $\Psi$ 上の $\sigma$-集合族であり，$\seqprn{\Psi, \famB_{\cap \Psi}}$ は可測空間である．\qed
+    }
+    \lempar[lem:sf-intersection-closed]{$\sigma$-集合族全体の $\bigcap$-閉性}{
+      非空集合 $\Omega$ に対し，$\displaystyle \forallsub{\famsetB}{\SFover{\Omega}}{\bigcap \famsetB \in \SFover{\Omega}}$
+      が成り立つ．すなわち，$\Omega$ 上の $\sigma$-集合族全体は共通部分をとる演算について閉じている．
+    }
+    \proof{
+      $\Omega$ を非空集合とし，$\Omega$ に関する補集合演算を $\compl{\paren{\dummysign}}$ とおく．
+      また，$\famsetB \subseteq \SFover{\Omega}$ とする．
+      まず任意の $\famB \in \famsetB$ に対して\eqref{axiom:B1}より $\Omega \in \famB$ であるから
+      $\displaystyle \Omega \in \bigcap \famsetB$，すなわち $\displaystyle \bigcap \famsetB$ は\eqref{axiom:B1}を満たす．
+      次に $\displaystyle A \in \bigcap \famsetB$ とすると，
+      任意の $\famB \in \famsetB$ に対して $A \in \famB$ であり\eqref{axiom:B2}より $\compl{A} \in \famB$ が成り立つ．
+      したがって $\displaystyle \compl{A} \in \bigcap \famsetB$ であり，$\displaystyle \bigcap \famsetB$ は\eqref{axiom:B2}を満たす．
+      最後に，$\displaystyle \famA \subseteq \bigcap \famsetB$ を高々可算とすると，
+      任意の $\famB \in \famsetB$ に対して $\famA \subseteq \famB$ であるから\eqref{axiom:B3}より
+      $\displaystyle \bigcup \famA \in \famB$ が成り立つ．したがって $\displaystyle \bigcup \famA \in \bigcap \famsetB$ であり，
+      $\displaystyle \bigcap \famsetB$ は\eqref{axiom:B3}を満たす．
+      以上より $\displaystyle \bigcap \famsetB$ は $\Omega$ 上の $\sigma$-集合族であり，
+      $\displaystyle \bigcap \famsetB \in \SFover{\Omega}$ が成り立つ．\qed
+    }
+    \plainpar{
+      なお，$\sigma$-集合族全体は和集合をとる演算については閉じていない．例えば $\Omega \defeq \setprn{1, 2, 3, 4}$ とすると
+      $\famB_{1} \defeq \setprn{\varnothing, \setprn{1, 2}, \setprn{3, 4}, \Omega}$ と
+      $\famB_{2} \defeq \setprn{\varnothing, \setprn{1}, \setprn{2, 3, 4}, \Omega}$ はそれぞれ
+      $\Omega$ 上の $\sigma$-集合族であるが，$\famB_{1} \cup \famB_{2}$ の可算部分集合
+      $\setprn{\setprn{1}, \setprn{3, 4}} \subseteq \famB_{1} \cup \famB_{2}$ に対して
+      $\displaystyle \bigcup \setprn{\setprn{1}, \setprn{3, 4}} = \setprn{1, 3, 4} \not\in \famB_{1} \cup \famB_{2}$ であるから
+      \eqref{axiom:B3}が成り立たず，$\famB_{1} \cup \famB_{2}$ は $\Omega$ 上の $\sigma$-集合族ではない．
+    }
+    \defpar{$\sigma$-集合族の閉包演算子}{
+      非空集合 $\Omega$ に対し，
+      \begin{align*}
+        \appv{\sigma}{\famS} \defeq \bigcap \setprnsep{\famB \in \SFover{\Omega}}{\famS \subseteq \famB}
+      \end{align*}
+      で定義される $\funcdoms{\sigma}{\Power{\Omega}}{\Power{\Omega}}$ を $\Omega$ 上の\newwordjaen{閉包演算子}{closure operator}と呼ぶ．
+    }
+    \corpar[cor:minimum-sigma-family]{}{
+      非空集合 $\Omega$ に対し，$\Omega$ 上の閉包演算子を $\sigma$ とおく．
+      集合族 $\famS \subseteq \Power{\Omega}$ に対し，$\appv{\sigma}{\famS}$ は $\famS$ を包む一意的に極小な $\sigma$-集合族である．
+    }
+    \proof{
+      補題~\ref{lem:sf-intersection-closed}から明らかである．\qed
+    }
+    \corpar{}{
+      非空集合 $\Omega$ 上の閉包演算子 $\sigma$ に対し，以下がそれぞれ成り立つ．
+      \begin{align*}
+      \tag{S1}\label{axiom:S1}
+        \forallsub[1]{\famS}{\Power{\Omega}}{\appv{\sigma}{\famS} \in \SFover{\Omega}}
+      \\
+      \tag{S2}\label{axiom:S2}
+        \forallsub[1]{\famS}{\Power{\Omega}}{\famS \subseteq \appv{\sigma}{\famS}}
+      \\
+      \tag{S3}\label{axiom:S3}
+        \forallsub{\famS}{\Power{\Omega}}{\forallin[1]{\famB}{\SFover{\Omega}}{
+          \lflimpl{\famS \subseteq \famB}{\appv{\sigma}{\famS} \subseteq \famB}
+        }}
+      \end{align*}
+    }
+    \defpar{Borel集合族}{
+      位相空間 $\seqprn{X, \topO}$ に対し，$X$ 上の閉包演算子を $\sigma$ とおく．
+      $\sigma$-集合族 $\appv{\sigma}{\topO}$ を $\seqprn{X, \topO}$ による\newwordjaen{Borel集合族}{}と呼ぶ．
+      特に $d$ 次元Euclid空間 $\Euclid{d} = \seqprn{\setR^{d}, \topO_{d}}$ によるBorel集合族 $\famBorel{d}$ を
+      $d$ 次元Borel集合族と呼ぶ．
+    }
+    \lempar[lem:intervals-in-famBorel]{}{
+      $1$ 次元Euclid空間 $\Euclid{1} = \seqprn{\setR, \topO_{1}}$ の開区間，閉区間，半開区間はいずれも $\famBorel{1}$ に属する．
+    }
+    \proof{
+      $\setR$ 上の閉包演算子を $\sigma$ とおく．
+      まず開区間 $\opintvl{a}{b}$ は明らかに $\opintvl{a}{b} \in \topO_{1} \subseteq \appv{\sigma}{\topO_{1}} = \famBorel{1}$．
+      閉区間 $\clintvl{a}{b}$ についてもまず $\opintvl{-\infty}{a}, \opintvl{b}{+\infty} \in \topO \subseteq \famBorel{1}$ と
+      $\famBorel{1}$ の\eqref{axiom:B2}より $\famBorel{1} \ni \setR \setmns \opintvl{-\infty}{a} = \clopintvl{a}{+\infty}$
+      および $\famBorel{1} \ni \setR \setmns \opintvl{b}{+\infty} = \opclintvl{-\infty}{b}$ であり，\eqref{axiom:B4}より
+      $\displaystyle \famBorel{1} \ni \bigcap \setprn{\opclintvl{-\infty}{b}, \clopintvl{a}{+\infty}} = \clintvl{a}{b}$ が成り立つ．
+      半開区間 $\opclintvl{a}{b}$ も既に示した $\opintvl{a}{+\infty} \in \famBorel{1}$ と $\opclintvl{-\infty}{b} \in \famBorel{1}$
+      より\eqref{axiom:B4}からすみやかに従う．$\clopintvl{a}{b}$ についても同様である．\qed
+    }
+    \defpar[def:famJQ-and-famJR]{}{
+      \begin{align*}
+        \famJQ{d} &\defeq \setprnsep{\prod_{i = 1}^{d} \opintvl{r_{i}}{q_{i}}}{
+          \forallin{i}{\Natleq{d}}{\lfland{\lfland{r_{i} \in \setQ}{q_{i} \in \setQ}}{r_{i} < q_{i}}}}
+      \\
+        \famJR{d} &\defeq \setprnsep{\prod_{i = 1}^{d} \opclintvl{a_{i}}{b_{i}}}{
+          \forallin{i}{\Natleq{d}}{\lfland{\lfland{a_{i} \in \setRninf}{b_{i} \in \setRpinf}}{a_{i} < b_{i}}}}
+      \end{align*}
+      で $\famJQ{d} \subseteq \setR^{d}$ および $\famJR{d} \subseteq \setR^{d}$ を定める．
+      ただし $\opclintvl{a}{+\infty}$ は $\opintvl{a}{+\infty}$ を指すものとする．
+    }
+    \lempar[lem:union-representation-of-famjq]{}{
+      $d$ 次元Euclid空間 $\Euclid{d} = \seqprn{\setR^{d}, \topO_{d}}$ に対して
+      \begin{align*}
+        \forallin{U}{\topO_{d}}{\existsin{\famA}{\Powercnt{\paren{\famJQ{d}}}}{\bigcup \famA = U}}
+      \end{align*}
+      が成り立つ．すなわち $d$ 次元Euclid空間の任意の開集合は $\famJQ{d}$ の高々可算個の元の合併として表せる．
+    }
+    \proof{
+      $U \in \topO_{d}$ とすると，開集合の定義より任意の $\vecx = \trsps{\seqprn{x_{1}, \ldots, x_{d}}} \in U$ に対して
+      或る $r \in \setRpos$ が存在して $\Ball{\Euclid{d}}{\vecx}{r} \subseteq U$．
+      したがってEuclid空間の性質より
+      \begin{align*}
+        \prod_{i = 1}^{d} \opintvl{x_{i} - \frac{r}{\sqrt{d}}}{\ x_{i} + \frac{r}{\sqrt{d}}}
+          \subseteq \Ball{\Euclid{d}}{\vecx}{r}
+      \end{align*}
+      が成り立つ．各 $i \in \Natleq{d}$ に於いて，
+      有理数の性質より $\displaystyle x_{i} - \frac{r}{\sqrt{d}} \leq r_{i} < x_{i} < q_{i} \leq x_{i} + \frac{r}{\sqrt{d}}$
+      なる $r_{i}, q_{i} \in \setQ$ が存在するので，このような各 $r_{i}, q_{i} \in \setQ$ を $\vecx$ に対して選んで
+      \begin{align*}
+        \app{J}{\vecx} \defeq \prod_{i = 1}^{d} \opintvl{r_{i}}{q_{i}}
+      \end{align*}
+      で $\funcdoms{J}{U}{\famJQ{d}}$ を定める．このとき，任意の $\vecx \in U$ に対して
+      $\app{J}{\vecx} \subseteq \Ball{\Euclid{d}}{\vecx}{r} \subseteq U$ であるから，
+      $\displaystyle \bigcup \setprnsep{\app{J}{\vecx}}{\vecx \in U} = U$ が成り立つ．
+      ところで $\famJQ{d}$ は明らかに $\setQ^{2d}$ との間に全単射が存在し可算であるから，
+      実は $\famJQ{d} = \Powercnt{\paren{\famJQ{d}}}$ である．
+      したがって $\famA \defeq \setprnsep{\app{J}{\vecx}}{\vecx \in U} \subseteq \famJQ{d}$ は高々可算であり，
+      $\displaystyle \bigcup \famA = U$ を満たす．\qed
+    }
+    \lempar[lem:famJR-to-famBorel]{}{
+      $\setR^{d}$ 上の閉包演算子を $\sigma$ とおくと，$\appv{\sigma}{\famJR{d}} = \famBorel{d}$ が成り立つ．
+    }
+    \proof{
+      まず $\appv{\sigma}{\famJR{d}} \subseteq \famBorel{d}$ を示す．
+      \eqref{axiom:S3}より $\famJR{d} \subseteq \famBorel{d}$ を示せば十分である．
+      任意に $\displaystyle A = \prod\nolimits_{i = 1}^{d} \opclintvl{a_{i}}{b_{i}} \in \famJR{d}$ とする．
+      この $A$ に対して $\displaystyle A_{n} \defeq \prod\nolimits_{i = 1}^{d} \opintvl{a_{i}}{b_{i} + \frac{1}{n}}$ で
+      $\funcdoms{A_{\dummysub}}{\setNpos}{\famBorel{d}}$ を定めると，$\setprnsep{A_{n}}{n \in \setNpos}$ は高々可算であるから
+      $\famBorel{d}$ の\eqref{axiom:B4}より
+      $\displaystyle \famBorel{d} \ni \bigcap \setprnsep{A_{n}}{n \in \setNpos} = A$ が成り立つ．
+      ゆえに $\famJR{d} \subseteq \famBorel{d}$ であり，結局 $\appv{\sigma}{\famJR{d}} \subseteq \famBorel{d}$ が成り立つ．
+    \decosep
+      次に $\famBorel{d} \subseteq \appv{\sigma}{\famJR{d}}$ を示す．
+      $d$ 次元Euclid空間の位相を $\topO_{d}$ とおくと $\famBorel{d} = \appv{\sigma}{\topO_{d}}$ であるから，
+      \eqref{axiom:S3}より $\topO_{d} \subseteq \appv{\sigma}{\famJR{d}}$ を示せば十分である．
+      $U \in \topO_{d}$ とすると，補題~\ref{lem:union-representation-of-famjq}より
+      $\displaystyle \bigcup \famA = U$ なる高々可算な $\famA \subseteq \famJQ{d}$ が存在する．
+      この $\famA$ をとると，高々可算なので全射な添字づけ $\funcdoms{A_{\dummysub}}{\setNpos}{\famA}$ が存在し，
+      各 $k \in \setNpos$ に於いて $\displaystyle A_{k} = \prod\nolimits_{i = 1}^{d} \opintvl{r_{i}}{q_{i}} \in \famJQ{d}$ として
+      \begin{align*}
+        \paren{A_{k}}_{n} \defeq \prod_{i = 1}^{d} \opclintvl{r_{i}}{q_{i} - \frac{1}{n}} \in \famJR{d} \subseteq \appv{\sigma}{\famJR{d}}
+      \end{align*}
+      で $\funcdoms{\paren{A_{k}}_{\dummysub}}{\setNpos}{\appv{\sigma}{\famJR{d}}}$ を定めると，
+      $\setprnsep{\paren{A_{k}}_{n}}{n \in \setNpos}$ が高々可算であることと $\appv{\sigma}{\famJR{d}}$ の\eqref{axiom:B3}より
+      \begin{align*}
+        \appv{\sigma}{\famJR{d}} \ni \bigcup \setprnsep{\paren{A_{k}}_{n}}{n \in \setNpos} = A_{k}
+      \end{align*}
+      であり，任意の $k \in \setNpos$ に対して $A_{k} \in \appv{\sigma}{\famJR{d}}$ が成り立つ．
+      さらに $\setprnsep{A_{k}}{k \in \setNpos} \subseteq \appv{\sigma}{\famJR{d}}$ が高々可算であることと
+      $\appv{\sigma}{\famJR{d}}$ の\eqref{axiom:B3}より
+      \begin{align*}
+        \appv{\sigma}{\famJR{d}} \ni \bigcup \setprnsep{A_{k}}{k \in \setNpos} = U
+      \end{align*}
+      であり $U \in \appv{\sigma}{\famJR{d}}$ が成り立つ．
+      ゆえに $\topO_{d} \subseteq \appv{\sigma}{\famJR{d}}$ であり，
+      結局 $\famBorel{d} = \appv{\sigma}{\topO_{d}} \subseteq \appv{\sigma}{\famJR{d}}$ が成り立つ．\qed
+    }
+    \defpar{函数族が生成する可測空間}{
+      非空集合 $\Omega$ に対し，$\Omega$ 上の閉包演算子を $\sigma$ とおく．
+      函数族 $\famX \subseteq \funcset{\Omega}{\setR}$ に対して
+      \begin{align*}
+        \app{\Aof}{\famX} \defeq \setprnsep{\funcinvimg{X}{A}}{\lfland{X \in \famX}{A \in \famBorel{1}}}
+      \end{align*}
+      で $\app{\Aof}{\famX} \subseteq \Power{\Omega}$ を定める．
+      $\seqprn{\Omega, \appv{\sigma}{\app{\Aof}{\famX}}}$ を $\famX$ から\newwordjaen{生成}{}された可測空間と呼ぶ．
+    }
+    \lempar[lem:famB-f]{}{
+      位相空間 $T = \seqprn{S, \topO}$ に対し，$S$ 上の閉包演算子を $\sigma$ とおくと，
+      \begin{align*}
+        \forallin{f}{\Cont{T}{\Euclid{1}}}{\forallin{A}{\famBorel{1}}{\funcinvimg{f}{A} \in \appv{\sigma}{\topO}}}
+      \end{align*}
+      が成り立つ．
+    }
+    \proof{
+      $\Euclid{1} = \seqprn{\setR, \topO_{1}}$ とおく．
+      $f \in \Cont{T}{\Euclid{1}}$ とし，この $f$ に対して
+      \begin{align*}
+        \famB_{f} \defeq \setprnsep{A \in \famBorel{1}}{\funcinvimg{f}{A} \in \appv{\sigma}{\topO}}
+      \end{align*}
+      で $\famB_{f} \subseteq \famBorel{1}$ を定める．$\famBorel{1} \subseteq \famB_{f}$ を示せば十分である．
+      $f$ の連続性より任意の $U \in \topO_{1}$ に対して $\funcinvimg{f}{U} \in \topO \subseteq \appv{\sigma}{\topO}$ であるから，
+      $\topO_{1} \subseteq \famB_{f}$ が成り立つ．
+      ここで $\famB_{f} \in \SFover{\setR}$ が補題~\ref{lem:basic-property-of-funcinvimg}を用いて示せる．
+      まず\eqref{axiom:O1}：$\setR \in \topO_{1}$ より
+      $\setR \in \famBorel{1}$ かつ $\funcinvimg{f}{\setR} \in \topO \subseteq \appv{\sigma}{\topO}$
+      であり，\eqref{axiom:B1}：$\setR \in \famB_{f}$ が成り立つ．
+      次に $A \in \famB_{f}$ とすると $\funcinvimg{f}{A} \in \appv{\sigma}{\topO}$ であり，
+      このとき $\funcinvimg{f}{\setR \setmns A} = \setR \setmns \funcinvimg{f}{A}$ および $\appv{\sigma}{\topO}$ の\eqref{axiom:B2}より
+      $\funcinvimg{f}{\setR \setmns A} \in \appv{\sigma}{\topO}$，したがって $\setR \setmns A \in \famB_{f}$ であるから，
+      $\famB_{f}$ は\eqref{axiom:B2}を満たす．
+      最後に $\famA \subseteq \famB_{f}$ を高々可算とすると，
+      $\displaystyle \funcinvimg{f}{\bigcup \famA} = \bigcup \setprnsep{\funcinvimg{f}{A}}{A \in \famA}$
+      であり，任意の $A \in \famA \subseteq \famB_{f}$ に対して $\funcinvimg{f}{A} \in \appv{\sigma}{\topO}$ なので
+      $\appv{\sigma}{\topO}$ の\eqref{axiom:B3}より
+      $\displaystyle \bigcup \setprnsep{\funcinvimg{f}{A}}{A \in \famA} \in \appv{\sigma}{\topO}$ が成り立つ．
+      したがって $\displaystyle \bigcup \famA \in \famB_{f}$ であり，$\famB_{f}$ は\eqref{axiom:B3}を満たす．
+      以上より $\famB_{f} \in \SFover{\setR}$ である．
+      $\topO_{1} \subseteq \famB_{f}$ かつ $\famB_{f} \in \SFover{\setR}$ であることから，系~\ref{cor:minimum-sigma-family}より
+      $\famBorel{1} = \appv{\sigma}{\topO_{1}} \subseteq \famB_{f}$ が成り立つ．\qed
+    }
+    \thmpar{}{
+      距離空間 $T = \seqprn{S, \distfunc; \topO}$ に対し，$S$ 上の閉包演算子を $\sigma$ とおくと，
+      $\appv{\sigma}{\topO} = \appv{\sigma}{\app{\Aof}{\Cont{T}{\Euclid{1}}}}$ が成り立つ．
+    }
+    \proof{
+      $\Euclid{1} = \seqprn{\setR, \topO_{1}}$ とおく．
+      まず $\appv{\sigma}{\app{\Aof}{\Cont{T}{\Euclid{1}}}} \subseteq \appv{\sigma}{\topO}$ を示すが，
+      \eqref{axiom:S3}より $\app{\Aof}{\Cont{T}{\Euclid{1}}} \subseteq \appv{\sigma}{\topO}$ を示せば十分である．
+      $f \in \Cont{T}{\Euclid{1}}$ とし，この $f$ に対してやはり
+      $\famB_{f} \defeq \setprnsep{A \in \famBorel{1}}{\funcinvimg{f}{A} \in \appv{\sigma}{\topO}}$
+      で $\famB_{f} \subseteq \famBorel{1}$ を定めると，補題~\ref{lem:famB-f}：$\famBorel{1} \subseteq \famB_{f}$ より
+      任意の $A \in \famBorel{1}$ に対して $A \in \famB_{f}$ すなわち $\funcinvimg{f}{A} \in \appv{\sigma}{\topO}$
+      が成り立つ．
+      ゆえに，任意の $f \in \Cont{T}{\Euclid{1}}$ と $A \in \famBorel{1}$ に対して $\funcinvimg{f}{A} \in \appv{\sigma}{\topO}$，
+      すなわち $\app{\Aof}{\Cont{T}{\Euclid{1}}} \subseteq \appv{\sigma}{\topO}$ であり，
+      結局 $\appv{\sigma}{\app{\Aof}{\Cont{T}{\Euclid{1}}}} \subseteq \appv{\sigma}{\topO}$ が成り立つ．
+    \decosep
+      次に $\appv{\sigma}{\topO} \subseteq \appv{\sigma}{\app{\Aof}{\Cont{T}{\Euclid{1}}}}$ を示すが，
+      やはり\eqref{axiom:S3}より $\topO \subseteq \appv{\sigma}{\app{\Aof}{\Cont{T}{\Euclid{1}}}}$ を示せば十分である．
+      $\seqprn{S, \distfunc; \topO}$ の閉集合 $F \in \setprnsep{S \setmns U}{U \in \topO}$ に対して
+      \begin{align*}
+        \app{f_{F}}{a} \defeq \inf \setprnsep{\app{\distfunc}{a, x}}{x \in F}
+      \end{align*}
+      で $\funcdoms{f_{F}}{F}{\setRnonneg}$ を定めると，
+      この $f_{F}$ は $T$ から $\Euclid{1}$ への連続写像，すなわち $f_{F} \in \Cont{T}{\Euclid{1}}$ である．
+      また $F = \funcinvimg{f}{\setprn{0}}$，$\setprn{0} \in \famBorel{1}$ より
+      $F \in \app{\Aof}{\Cont{T}{\Euclid{1}}} \subseteq \appv{\sigma}{\app{\Aof}{\Cont{T}{\Euclid{1}}}}$．
+      閉集合 $F$ は任意であったから，$\setprnsep{S \setmns U}{U \in \topO} \subseteq \appv{\sigma}{\app{\Aof}{\Cont{T}{\Euclid{1}}}}$
+      が成り立つ．よって $U \in \topO$ に対して $S \setmns U \in \appv{\sigma}{\app{\Aof}{\Cont{T}{\Euclid{1}}}}$ であり，
+      $\appv{\sigma}{\app{\Aof}{\Cont{T}{\Euclid{1}}}}$ の\eqref{axiom:B2}より
+      $U \in \appv{\sigma}{\app{\Aof}{\Cont{T}{\Euclid{1}}}}$ が成り立つ．
+      ゆえに $\topO \subseteq \appv{\sigma}{\app{\Aof}{\Cont{T}{\Euclid{1}}}}$ であり，
+      結局 $\appv{\sigma}{\topO} \subseteq \appv{\sigma}{\app{\Aof}{\Cont{T}{\Euclid{1}}}}$ が成り立つ．\qed
+    }
+    \defpar{直積可測空間}{
+      有限個の可測空間 $\seqprn{\Omega_{1}, \famB_{1}}, \ldots, \seqprn{\Omega_{n}, \famB_{n}}$ に対して
+      $\displaystyle \prod\nolimits_{i = 1}^{d} \Omega_{i} = \Omega_{1} \times \cdots \times \Omega_{n}$ 上の
+      閉包演算子を $\sigma$ とおいて
+      \begin{align*}
+        \bigotimes_{i = 1}^{d} \famB_{i}
+          &= \famB_{1} \otimes \cdots \otimes \famB_{n}
+            \defeq \appv{\sigma}{\setprnsep{\prod_{i = 1}^{d} A_{i}}{\forallin{i}{\Natleq{d}}{A_{i} \in \famB_{i}}}}
+      \end{align*}
+      で定めた可測空間
+      $\displaystyle \seqprn{\prod\nolimits_{i = 1}^{d} \Omega_{i},\ \bigotimes\nolimits_{i = 1}^{d} \famB_{i}}$
+      を $\seqprn{\Omega_{1}, \famB_{1}}, \ldots, \seqprn{\Omega_{n}, \famB_{n}}$ の\newwordjaen{直積可測空間}{}と呼ぶ．
+    }
+    \lempar{$d$ 次元Borel集合族の直積による表現}{
+      $d \in \setNpos$ に対し，
+      $\displaystyle \famBorel{d}
+        = \bigotimes_{i = 1}^{d} \famBorel{1} = \underbrace{\famBorel{1} \otimes \cdots \otimes \famBorel{1}}_{d\text{個}}$
+      が成り立つ．
+    }
+    \proof{
+      $\setR^{d}$ 上の閉包演算子を $\sigma$ とおく．
+      まず $\displaystyle \famBorel{d} \subseteq \bigotimes\nolimits_{i = 1}^{d} \famBorel{1}$ は容易である．
+      補題~\ref{lem:famJR-to-famBorel}：$\appv{\sigma}{\famJR{d}} = \famBorel{d}$ および
+      補題~\ref{lem:intervals-in-famBorel}より
+      $\displaystyle \famJR{d} \subseteq \bigotimes\nolimits_{i = 1}^{d} \famBorel{1}$ であり，
+      \eqref{axiom:S3}から
+      $\displaystyle \famBorel{d} = \appv{\sigma}{\famJR{d}} \subseteq \bigotimes\nolimits_{i = 1}^{d} \famBorel{1}$
+      が成り立つ．以下では $\displaystyle \bigotimes\nolimits_{i = 1}^{d} \famBorel{1} \subseteq \famBorel{d}$ を示す．
+      各 $k \in \Natleq{d}$ に於いて，$A \in \famBorel{1}$ に対して
+      \begin{align*}
+        \appv{\Gamma_{k}}{A} \defeq
+          \setR \times \cdots \times \setR \times
+            \overset{\overset{\displaystyle k}{\smile}}{A}
+              \times \setR \times \cdots \times \setR
+      \end{align*}
+      と定めて
+      \begin{align*}
+        \famB_{\Gamma, k} \defeq \setprnsep{A \in \famBorel{1}}{\appv{\Gamma_{k}}{A} \in \famBorel{d}}
+      \end{align*}
+      で $\famB_{\Gamma, k}$ を定義する．ここで $\famB_{\Gamma, k} \in \SFover{\setR}$ がすぐに示せる．
+      \eqref{axiom:B1}：$\setR \in \famB_{\Gamma, k}$ は
+      $\setR \in \famBorel{1}$ と $\appv{\Gamma_{k}}{\setR} = \setR^{d} \in \famBorel{d}$ から従い，
+      \eqref{axiom:B2}：$A \in \famB_{\Gamma, k}$ に対して $\setR \setmns A \in \famB_{\Gamma, k}$ であることは
+      $\famBorel{1} \ni \setR \setmns A$ と
+      $\famBorel{d} \ni \setR^{d} \setmns \appv{\Gamma_{k}}{A} = \appv{\Gamma_{k}}{\paren{\setR \setmns A}}$ から従い，
+      \eqref{axiom:B3}：高々可算の $\famA \subseteq \famB_{\Gamma, k}$ に対して $\displaystyle \bigcup \famA \in \famB_{\Gamma, k}$
+      が成り立つことも $\famA \subseteq \famBorel{1}$ による $\displaystyle \bigcup \famA \in \famBorel{1}$ および
+      $\displaystyle \famBorel{d} \ni \bigcup \setprnsep{\appv{\Gamma_{k}}{A}}{A \in \famA} = \appv{\Gamma_{k}}{\paren{\bigcup \famA}}$
+      から従う．よって $\famB_{\Gamma, k} \in \SFover{\setR}$ である．
+    \decosep
+      さらに，$\famB_{\Gamma, k} = \famBorel{1}$ が示せる．$A \in \famJR{1}$ とすると，
+      まず $\famJR{1} \subseteq \appv{\sigma}{\famJR{1}} = \famBorel{1}$ より $A \in \famBorel{1}$ であり，
+      そして $\famJR{1}$ の定義より $\appv{\Gamma_{k}}{A} \in \famJR{d} \subseteq \appv{\sigma}{\famJR{d}} = \famBorel{d}$ であるから
+      $A \in \famB_{\Gamma, k}$ が成り立つ．したがって $\famJR{1} \subseteq \famB_{\Gamma, k}$ であり，
+      \eqref{axiom:S3}より $\famBorel{1} = \appv{\sigma}{\famJR{1}} \subseteq \famB_{\Gamma, k}$ が成り立つ．
+      よって $\famB_{\Gamma, k} = \famBorel{1}$ であり，すなわち $\famB_{\Gamma, k}$ の定義より
+      任意の $A \in \famBorel{1}$ に対して $\appv{\Gamma_{k}}{A} \in \famBorel{d}$ が成り立つことになる．
+    \decosep
+      $k \in \Natleq{d}$ は任意であったから，ここで $A_{1}, \ldots, A_{d} \in \famBorel{1}$ とすると
+      $\appv{\Gamma_{1}}{A_{1}}, \ldots, \appv{\Gamma_{d}}{A_{d}} \in \famBorel{d}$ であり，
+      \begin{align*}
+        \prod_{i = 1}^{d} A_{i}
+          &= A_{1} \times \cdots \times A_{d}
+        \\&= \appv{\Gamma_{1}}{A_{1}} \cap \cdots \cap \appv{\Gamma_{d}}{A_{d}} \in \famBorel{d}
+      \end{align*}
+      が $\famBorel{d}$ の\eqref{axiom:B4}より成り立つ．ゆえに
+      \begin{align*}
+        \setprnsep{\prod_{i = 1}^{d} A_{i}}{\forallin{i}{\Natleq{d}}{A_{i} \in \famBorel{1}}} \subseteq \famBorel{d}
+      \end{align*}
+      であり，結局\eqref{axiom:S3}より
+      \begin{align*}
+        \bigotimes_{i = 1}^{d} \famBorel{1}
+          = \appv{\sigma}{\setprnsep{\prod_{i = 1}^{d} A_{i}}{\forallin{i}{\Natleq{d}}{A_{i} \in \famBorel{1}}}} \subseteq \famBorel{d}
+      \end{align*}
+      が成り立つ．
+    \decosep
+      以上より $\displaystyle \bigotimes\nolimits_{i = 1}^{d} \famBorel{1} = \famBorel{d}$ が示せた．\qed
+    }
+  \subsection{確率測度}
+    \defpar{確率測度}{
+      可測空間 $\seqprn{\Omega, \famB}$ に対し，$\funcdoms{\Prob}{\famB}{\setR}$ が
+      \begin{align*}
+      \tag{P1}\label{axiom:P1}
+      &
+        \forallin{A}{\famB}{0 \leq \app{\Prob}{A} \leq 1}
+      \\[1em]%(nonsemantic)
+      \tag{P2}\label{axiom:P2}
+      &
+        \app{\Prob}{\Omega} = 1
+      \\[1em]%(nonsemantic)
+      \tag{P3}\label{axiom:P3}
+      &
+        \forallfunc{A_{\dummysub}}{\setNpos}{\famB}{
+          \lflimpl{\empty%(nonsemantic)
+            \forallin{k|l}{\setNpos}{\lflimpl{k \neq l}{A_{k} \cap A_{l} = \varnothing}}
+          }{\midbreak\midtab\hspace{16em}%(nonsemantic)
+            \app{\Prob}{\bigcup \setprnsep{A_{k}}{k \in \setNpos}} = \mathop{\smash{\sum_{k = 1}^{\infty}}} \app{\Prob}{A_{k}}
+          }
+        }
+        \rule[-1.5em]{0pt}{2.5em}%(nonsemantic)
+      \end{align*}
+      をいずれも満たすとき，$\Prob$ を $\seqprn{\Omega, \famB}$ 上の\newwordjaen{確率測度}{}と呼ぶ．
+      また，可測空間 $\seqprn{\Omega, \famB}$ にこの確率測度 $\Prob$ を加えた組 $\seqprn{\Omega, \famB, \Prob}$ を
+      \newwordjaen{確率空間}{}と呼ぶ．
+    }
+    \plainpar{
+      \eqref{axiom:P1}は確率が区間 $\clintvl{0}{1}$ で規格化されていることを，
+      \eqref{axiom:P2}は全体事象の確率が $1$ であることを，
+      \newwordjaen{可算加法性}{}と呼ばれる\eqref{axiom:P3}は
+      可算無限個の排反な事象が起こる確率の和はその合併の事象が起こる確率に等しいことを反映した定義である．
+    }
+    \lempar{確率測度の基本的性質1}{
+      確率空間 $\seqprn{\Omega, \famB, \Prob}$ に対し，以下がそれぞれ成り立つ．
+      \begin{align*}
+      \tag{P2${}^\prime$}\label{axiom:P2'}
+      &
+        \app{\Prob}{\varnothing} = 0
+      \\[1em]%(nonsemantic)
+      \tag{P3${}^\prime$}\label{axiom:P3'}
+      &
+        \forallin{n}{\setNpos}{\forallfunc{A_{\dummysub}}{\Natleq{n}}{\famB}{
+          \lflimpl{\empty%(nonsemantic)
+            \forallin{k|l}{\Natleq{n}}{\lflimpl{k \neq l}{A_{k} \cap A_{l} = \varnothing}}
+          }{\midbreak\midtab\hspace{20em}%(nonsemantic)
+            \app{\Prob}{\bigcup \setprnsep{A_{k}}{k \in \Natleq{n}}} = \mathop{\smash{\sum_{k = 1}^{n}}} \app{\Prob}{A_{k}}
+          }
+        }}
+      \\[1em]%(nonsemantic)
+      \tag{P4}\label{axiom:P4}
+      &
+        \forallin{A|B}{\famB}{\lflimpl{A \subseteq B}{\app{\Prob}{A} \leq \app{\Prob}{B}}}
+      \\[1em]%(nonsemantic)
+      \tag{P5}\label{axiom:P5}
+      &
+        \forallin{A|B}{\famB}{\app{\Prob}{A} + \app{\Prob}{B} = \app{\Prob}{A \cup B} + \app{\Prob}{A \cap B}}
+      \\[1em]%(nonsemantic)
+      \tag{P6}\label{axiom:P6}
+      &
+        \forallfunc{A_{\dummysub}}{\setNpos}{\famB}{
+          \app{\Prob}{\bigcup \setprnsep{A_{k}}{k \in \setNpos}} \leq \sum_{k = 1}^{\infty} \app{\Prob}{A_{k}}
+        }
+      \end{align*}
+    }
+    \proof{
+      \subproof{\eqref{axiom:P2'}}{
+        $A_{\dummysub} \defeq \setprnsep{\seqprn{n, \varnothing}}{n \in \setNpos}$，つまり恒等的に空集合であるような列を考えると，
+        この $A_{\dummysub}$ は\eqref{axiom:P3}：可算加法性の仮定
+        $\forallin{k|l}{\setNpos}{\lflimpl{k \neq l}{A_{k} \cap A_{l} = \varnothing}}$
+        を満たすから，$\displaystyle \app{\Prob}{\varnothing} = \sum\nolimits_{k = 1}^{\infty} \app{\Prob}{\varnothing}$ が成り立つ．
+        仮に $\app{\Prob}{\varnothing} \neq 0$ とすると左辺は\eqref{axiom:P1}より有限であるのに対して
+        右辺は発散するので矛盾．ゆえに $\app{\Prob}{\varnothing} = 0$ である．\qed
+      }
+      \subproof{\eqref{axiom:P3'}}{
+        任意の $k \neq l$ なる $k, l \in \Natleq{n}$ に対して $A_{k} \cap A_{l} = \varnothing$ を満たす
+        有限の列 $\funcdoms{A_{\dummysub}}{\Natleq{n}}{\famB}$ に対して
+        \begin{align*}
+          B_{i} \defeq
+            \begin{cases}
+              A_{i}       &\caseif{i \in \Natleq{n}}
+            \\
+              \varnothing &\caseif{i \in \Natleq{n + 1, \infty}}
+            \end{cases}
+        \end{align*}
+        で列 $\funcdoms{B_{\dummysub}}{\setNpos}{\famB}$ を定めると，
+        これは\eqref{axiom:P3}：可算加法性の仮定を明らかに満たし，したがって
+        \begin{align*}
+          \app{\Prob}{\bigcup \setprnsep{B_{k}}{k \in \setNpos}} = \sum\nolimits_{k = 1}^{\infty} \app{\Prob}{B_{k}}
+        \end{align*}
+        が成り立つ．ここで $\displaystyle \bigcup \setprnsep{B_{k}}{k \in \setNpos} = \bigcup \setprnsep{A_{k}}{k \in \Natleq{n}}$
+        であり，また既に示した\eqref{axiom:P2'}：$\app{\Prob}{\varnothing} = 0$ より
+        $\displaystyle \sum\nolimits_{k = 1}^{\infty} \app{\Prob}{B_{k}} = \sum\nolimits_{k = 1}^{n} \app{\Prob}{A_{k}}$
+        が成り立つから，結局 $A_{\dummysub}$ は
+        \begin{align*}
+          \app{\Prob}{\bigcup \setprnsep{A_{k}}{k \in \Natleq{n}}} = \mathop{\smash{\sum_{k = 1}^{n}}} \app{\Prob}{A_{k}}
+        \end{align*}
+        を満たす．\qed
+      }
+      \subproof{\eqref{axiom:P4}}{
+        $A \subseteq B$ なる $A, B \in \famB$ に対し，
+        $B \setmns A = \paren{\Omega \setmns B} \cap A$ と\eqref{axiom:B4}より $B \setmns A \in \famB$．
+        ここで $\paren{B \setmns A} \cap A = \varnothing$ と既に示した\eqref{axiom:P3'}より
+        \begin{align*}
+          \app{\Prob}{B}
+            &= \app{\Prob}{\bigcup \setprn{B \setmns A, A}}
+              = \app{\Prob}{B \setmns A} + \app{\Prob}{A}
+        \end{align*}
+        であり，\eqref{axiom:P1}より $\app{\Prob}{B \setmns A} \geq 0$ であるから $\app{\Prob}{B} \geq \app{\Prob}{A}$ が成り立つ．\qed
+      }
+      \subproof{\eqref{axiom:P5}}{
+        $A, B \in \famB$ に対してはやはり $B \setmns A \in \famB$ であり，
+        $A \cap \paren{B \setmns A} = \varnothing$，$\paren{A \cap B} \cap \paren{B \setmns A} = \varnothing$ および
+        既に示した\eqref{axiom:P3'}より
+        \begin{align*}
+          \app{\Prob}{A \cup B} &= \app{\Prob}{\bigcup \setprn{A, B \setmns A}} = \app{\Prob}{A} + \app{\Prob}{B \setmns A}
+        \\
+          \app{\Prob}{B} &= \app{\Prob}{\bigcup \setprn{A \cap B, B \setmns A}} = \app{\Prob}{A \cap B} + \app{\Prob}{B \setmns A}
+        \end{align*}
+        であるから，
+        \begin{align*}
+          \app{\Prob}{A} + \app{\Prob}{B}
+            &= \paren{\app{\Prob}{A \cup B} - \app{\Prob}{B \setmns A}} + \paren{\app{\Prob}{A \cap B} + \app{\Prob}{B \setmns A}}
+          \\&= \app{\Prob}{A \cup B} + \app{\Prob}{A \cap B}
+        \end{align*}
+        が成り立つ．\qed
+      }
+      \subproof{\eqref{axiom:P6}}{
+        $\funcdoms{A_{\dummysub}}{\setNpos}{\famB}$ に対して
+        \begin{align*}
+          B_{i} \defeq
+            \begin{cases}
+              A_{1} &\caseif{i = 1}
+            \\\displaystyle
+              A_{i} \setmns \bigcup \setprnsep{A_{k}}{k \in \Natleq{i - 1}} &\caseif{i \in \Natleq{2, \infty}}
+            \end{cases}
+        \end{align*}
+        で $\funcdoms{B_{\dummysub}}{\setNpos}{\famB}$ を定めると，定義より明らかに
+        $\displaystyle \bigcup \setprnsep{B_{k}}{k \in \setNpos} = \bigcup \setprnsep{A_{k}}{k \in \setNpos}$，
+        および $k \neq l$ なる任意の $k, l \in \setNpos$ に対して $B_{k} \cap B_{l} = \varnothing$ が成り立つ．
+        したがって\eqref{axiom:P3}より
+        \begin{align*}
+          \app{\Prob}{\bigcup \setprnsep{A_{k}}{k \in \setNpos}}
+            &= \app{\Prob}{\bigcup \setprnsep{B_{k}}{k \in \setNpos}}
+          \\&= \sum_{k = 1}^{\infty} \app{\Prob}{B_{k}}
+        \end{align*}
+        が成り立つ．さらに任意の $k \in \setNpos$ に対して $B_{k} \subseteq A_{k}$ であって，
+        既に示した\eqref{axiom:P4}より $\app{\Prob}{B_{k}} \leq \app{\Prob}{A_{k}}$ であるから
+        \begin{align*}
+          \sum_{k = 1}^{\infty} \app{\Prob}{B_{k}}
+            \leq \sum_{k = 1}^{\infty} \app{\Prob}{A_{k}}
+        \end{align*}
+        が成り立ち，結局
+        \begin{align*}
+          \app{\Prob}{\bigcup \setprnsep{A_{k}}{k \in \setNpos}}
+            \leq \sum_{k = 1}^{\infty} \app{\Prob}{A_{k}}
+        \end{align*}
+        が成り立つ．\qed
+      }
+    }
+    \plainpar{
+      \eqref{axiom:P3'}は\newwordjaen{有限加法性}{finite additivity}，\eqref{axiom:P4}は\newwordjaen{単調性}{monotomicity}，
+      \eqref{axiom:P5}は\newwordjaen{モジュラ性}{modularity}，\eqref{axiom:P6}は\newwordjaen{劣加法性}{subadditivity}と呼ばれる．
+      \eqref{axiom:P3'}については有限個であるから排列順について気にせずに
+      \begin{align*}
+      \tag{P3${}^\prime$}
+        \forallin{\famA}{\Powerfin{\famB}}{\lflimpl{\forallin{A|B}{\famA}{\lflimpl{A \neq B}{A \cap B = \varnothing}}}{
+          \app{\Prob}{\bigcup \famA} = \sum_{A \in \famA} \app{\Prob}{A}
+        }}
+      \end{align*}
+      と書き換えることもできる．
+    }
+    \thmpar{確率測度の基本的性質2}{
+      確率空間 $\seqprn{\Omega, \famB, \Prob}$ に対し，以下がそれぞれ成り立つ．
+      \begin{align*}
+      \tag{P7}\label{axiom:P7}
+      &
+        \forallfunc{A_{\dummysub}}{\setNpos}{\famB}{
+          \lflimpl{
+            \forallin{k}{\setNpos}{A_{k} \subseteq A_{k + 1}}
+          }{
+            \lim_{k \to \infty} \app{\Prob}{A_{k}} = \app{\Prob}{\bigcup \setprnsep{A_{k}}{k \in \setNpos}}
+          }
+        }
+      \\[1em]%(nonsemantic)
+      \tag{P8}\label{axiom:P8}
+      &
+        \forallfunc{A_{\dummysub}}{\setNpos}{\famB}{
+          \lflimpl{
+            \forallin{k}{\setNpos}{A_{k} \supseteq A_{k + 1}}
+          }{
+            \lim_{k \to \infty} \app{\Prob}{A_{k}} = \app{\Prob}{\bigcap \setprnsep{A_{k}}{k \in \setNpos}}
+          }
+        }
+      \\[0.5em]%(nonsemantic)
+      \tag{P9}\label{axiom:P9}
+      &
+        \forallfunc{A_{\dummysub}}{\setNpos}{\famB}{
+          \app{\Prob}{\liminf_{k \to \infty} A_{k}}
+            \leq \liminf_{k \to \infty}^{\scriptrange{\seqprn{\setR, \leq}}} \app{\Prob}{A_{k}}
+              \leq \limsup_{k \to \infty}^{\scriptrange{\seqprn{\setR, \leq}}} \app{\Prob}{A_{k}}
+                \leq \app{\Prob}{\limsup_{k \to \infty} A_{k}}
+        }
+      \end{align*}
+    }
+    \proof{
+      \subproof{\eqref{axiom:P7}}{
+        単調増大な $\funcdoms{A_{\dummysub}}{\setNpos}{\famB}$ に対して
+        \begin{align*}
+          B_{i} \defeq
+            \begin{cases}
+              A_{1} &\caseif{i = 1}
+            \\
+              A_{i} \setmns A_{i - 1} &\caseif{i \in \Natintvl{2}{\infty}}
+            \end{cases}
+        \end{align*}
+        で $\funcdoms{B_{\dummysub}}{\setNpos}{\famB}$ を定めると，
+        明らかに任意の $n \in \setNpos$ に対して $A_{n} = \bigcup \setprnsep{B_{k}}{k \in \Natleq{n}}$，
+        および任意の $k \neq l$ なる $k, l \in \setNpos$ に対して $B_{k} \cap B_{l} = \varnothing$ である．
+        したがって\eqref{axiom:P3}より
+        \begin{align*}
+          \app{\Prob}{\bigcup \setprnsep{A_{n}}{n \in \setNpos}}
+            &= \app{\Prob}{\bigcup \setprnsep{\bigcup \setprnsep{B_{k}}{k \in \Natleq{n}}}{n \in \setNpos}}
+          \\&= \app{\Prob}{\bigcup \setprnsep{B_{k}}{k \in \setNpos}}
+          \\&= \sum_{k = 1}^{\infty} \app{\Prob}{B_{k}}
+        \end{align*}
+        が成り立つ．一方で\eqref{axiom:P3'}より
+        \begin{align*}
+          \lim_{n \to \infty} \app{\Prob}{A_{n}}
+            &= \lim_{n \to \infty} \app{\Prob}{\bigcup \setprnsep{B_{k}}{k \in \Natleq{n}}}
+          \\&= \lim_{n \to \infty} \sum_{k = 1}^{n} \app{\Prob}{B_{k}}
+          \\&= \sum_{k = 1}^{\infty} \app{\Prob}{B_{k}}
+        \end{align*}
+        であるから，結局
+        \begin{align*}
+          \app{\Prob}{\bigcup \setprnsep{A_{n}}{n \in \setNpos}}
+            = \lim_{n \to \infty} \app{\Prob}{A_{n}}
+        \end{align*}
+        が成り立つ．\qed
+      }
+      \subproof{\eqref{axiom:P8}}{
+        単調縮小な $\funcdoms{A_{\dummysub}}{\setNpos}{\famB}$ に対して $B_{i} \defeq \Omega \setmns A_{i}$ で定めた
+        $\funcdoms{B_{\dummysub}}{\setNpos}{\famB}$ は単調増大であり，既に示した\eqref{axiom:P7}より
+        \begin{align*}
+          \app{\Prob}{\bigcup \setprnsep{B_{n}}{n \in \setNpos}} = \lim_{n \to \infty} \app{\Prob}{B_{n}}
+        \end{align*}
+        が成り立つ．また，\eqref{axiom:P3'}：有限加法性より各 $n \in \setNpos$ に対して
+        $1 = \app{\Prob}{\Omega} = \app{\Prob}{A_{n}} + \app{\Prob}{B_{n}}$ であり，
+        $n \mapsto \app{\Prob}{B_{n}}$ が収束するので $n \mapsto \app{\Prob}{A_{n}}$ も収束して
+        \begin{align*}
+          \lim_{n \to \infty} \app{\Prob}{A_{n}}
+            &= \lim_{n \to \infty} \paren{1 - \app{\Prob}{B_{n}}}
+          \\&= 1 - \lim_{n \to \infty} \app{\Prob}{B_{n}}
+        \end{align*}
+        を満たす．ここで
+        $\displaystyle \Omega \setmns \bigcup \setprnsep{B_{n}}{n \in \setNpos}
+          = \bigcap \setprnsep{\Omega \setmns B_{n}}{n \in \setNpos}
+            = \bigcap \setprnsep{A_{n}}{n \in \setNpos}$
+        であり，ゆえに
+        \begin{align*}
+          \app{\Prob}{\bigcup \setprnsep{A_{n}}{n \in \setNpos}}
+            &= 1 - \app{\Prob}{\bigcup \setprnsep{B_{n}}{n \in \setNpos}}
+          \\&= 1 - \lim_{n \to \infty} \app{\Prob}{B_{n}}
+          \\&= \app{\Prob}{A_{n}}
+        \end{align*}
+        が成り立つ．\qed
+      }
+      \subproof{\eqref{axiom:P9}}{
+        $\funcdoms{A_{\dummysub}}{\setNpos}{\famB}$ に対して
+        $\displaystyle B_{n} \defeq \bigcap \setprnsep{A_{k}}{k \in \Natintvl{n}{\infty}}$ で
+        $\funcdoms{B_{\dummysub}}{\setNpos}{\famB}$ を定めると，既に示した\eqref{axiom:P7}より
+        \begin{align*}
+          \app{\Prob}{\liminf_{k \to \infty} A_{k}}
+            = \app{\Prob}{\bigcup \setprnsep{B_{n}}{n \in \setNpos}}
+              = \lim_{n \to \infty} \app{\Prob}{B_{n}}
+        \end{align*}
+        が成り立つ．また定義より明らかに各 $n \in \setNpos$ と $k \in \Natintvl{n}{\infty}$ に対して $B_{n} \subseteq A_{k}$ であり，
+        \eqref{axiom:P4}：単調性より
+        \begin{align*}
+          \app{\Prob}{B_{n}} \leq \inf_{\scriptrange{\seqprn{\setR, \leq}}} \setprnsep{\app{\Prob}{A_{k}}}{k \in \Natintvl{n}{\infty}}
+        \end{align*}
+        である．\eqref{axiom:P1}より各 $k \in \setNpos$ に対して $\app{\Prob}{A_{k}} \geq 0$ であるから
+        $\displaystyle n \mapsto \inf_{\scriptrange{\seqprn{\setR, \leq}}} \setprnsep{\app{\Prob}{A_{k}}}{k \in \Natintvl{n}{\infty}}$
+        は収束し，
+        \begin{align*}
+          \lim_{n \to \infty} \app{\Prob}{B_{n}}
+            \leq \lim_{n \to \infty} \inf_{\scriptrange{\seqprn{\setR, \leq}}} \setprnsep{\app{\Prob}{A_{k}}}{k \in \Natintvl{n}{\infty}}
+              = \liminf_{n \to \infty}^{\scriptrange{\seqprn{\setR, \leq}}} \app{\Prob}{A_{n}}
+        \end{align*}
+        が成り立つ\QUESTION ．以上よりまず
+        $\displaystyle \app{\Prob}{\liminf_{n \to \infty} A_{n}}
+          \leq \liminf_{n \to \infty}^{\scriptrange{\seqprn{\setR, \leq}}} \app{\Prob}{A_{n}}$
+        が示せた．同様に $\displaystyle C_{n} \defeq \bigcup \setprnsep{A_{k}}{k \in \Natintvl{n}{\infty}}$ で
+        $\funcdoms{C_{\dummysub}}{\setNpos}{\famB}$ を定めると，既に示した\eqref{axiom:P8}より
+        \begin{align*}
+          \app{\Prob}{\limsup_{k \to \infty} A_{k}}
+            = \app{\Prob}{\bigcap \setprn{C_{k}}{k \in \Natintvl{n}{\infty}}}
+              = \lim_{n \to \infty} \app{\Prob}{C_{n}}
+        \end{align*}
+        が成り立つ．定義より明らかに各 $n \in \setNpos$ と $k \in \Natintvl{n}{\infty}$ に対して $C_{n} \supseteq A_{k}$ であり，
+        \eqref{axiom:P4}：単調性より
+        \begin{align*}
+          \app{\Prob}{C_{n}} \geq \sup_{\scriptrange{\seqprn{\setR, \leq}}} \setprnsep{\app{\Prob}{A_{k}}}{k \in \Natintvl{n}{\infty}}
+        \end{align*}
+        である．\eqref{axiom:P1}より各 $k \in \setNpos$ に対して $\app{\Prob}{A_{k}} \leq 1$ であるから
+        $\displaystyle n \mapsto \sup_{\scriptrange{\seqprn{\setR, \leq}}} \setprnsep{\app{\Prob}{A_{k}}}{k \in \Natintvl{n}{\infty}}$
+        は収束し，
+        \begin{align*}
+          \lim_{n \to \infty} \app{\Prob}{C_{n}}
+            \geq \lim_{n \to \infty} \sup_{\scriptrange{\seqprn{\setR, \leq}}} \setprnsep{\app{\Prob}{A_{k}}}{k \in \Natintvl{n}{\infty}}
+              = \limsup_{n \to \infty}^{\scriptrange{\seqprn{\setR, \leq}}} \app{\Prob}{A_{n}}
+        \end{align*}
+        が成り立つ\QUESTION ．ゆえに
+        $\displaystyle \app{\Prob}{\limsup_{n \to \infty} A_{n}}
+          \geq \limsup_{n \to \infty}^{\scriptrange{\seqprn{\setR, \leq}}} \app{\Prob}{A_{n}}$
+        が示せた．
+        $\displaystyle \liminf_{n \to \infty}^{\scriptrange{\seqprn{\setR, \leq}}} \app{\Prob}{A_{n}} \leq
+          \limsup_{n \to \infty}^{\scriptrange{\seqprn{\setR, \leq}}} \app{\Prob}{A_{n}}$
+        は定義より明らかであるから，結局
+        \begin{align*}
+          \app{\Prob}{\liminf_{k \to \infty} A_{k}}
+            \leq \liminf_{k \to \infty}^{\scriptrange{\seqprn{\setR, \leq}}} \app{\Prob}{A_{k}}
+              \leq \limsup_{k \to \infty}^{\scriptrange{\seqprn{\setR, \leq}}} \app{\Prob}{A_{k}}
+                \leq \app{\Prob}{\limsup_{k \to \infty} A_{k}}
+        \end{align*}
+        が成り立つ．\qed
+      }
+    }
+    \thmpar{Borel--Cantelliの補題}{
+      確率空間 $\seqprn{\Omega, \famB, \Prob}$ に対し，
+      \begin{align*}
+        \forallfunc{A_{\dummysub}}{\setNpos}{\famB}{
+          \lflimpl{\sum_{k = 1}^{\infty} \app{\Prob}{A_{k}} < +\infty}{\app{\Prob}{\limsup_{k \to \infty} A_{k}} = 0}}
+      \end{align*}
+      が成り立つ．
+    }
+    \proof{
+      $\funcdoms{A_{\dummysub}}{\setNpos}{\famB}$ に対して
+      $\displaystyle B_{i} \defeq \bigcup \setprnsep{A_{k}}{k \in \Natintvl{n}{\infty}}$
+      で $\funcdoms{B_{\dummysub}}{\setNpos}{\famB}$ を定義すると，
+      まず $B_{\dummysub}$ は明らかに単調縮小であるから\eqref{axiom:P8}より
+      \begin{align*}
+        \app{\Prob}{\limsup_{k \to \infty} A_{k}}
+          = \app{\Prob}{\bigcap \setprnsep{B_{n}}{n \in \setNpos}}
+            = \lim_{n \to \infty} \app{\Prob}{B_{n}}
+      \end{align*}
+      が成り立つ．ここで\eqref{axiom:P6}：劣加法性より各 $n \in \setNpos$ に対して
+      \begin{align*}
+        \app{\Prob}{B_{n}} = \app{\Prob}{\bigcup \setprnsep{A_{k}}{k \in \Natintvl{n}{\infty}}}
+          \leq \sum_{k = n}^{\infty} \app{\Prob}{A_{k}}
+      \end{align*}
+      である．ここで $\sum_{k = 1}^{\infty} \app{\Prob}{A_{k}} < +\infty$ より
+      $\displaystyle \lim_{n \to \infty} \sum_{k = n}^{\infty} \app{\Prob}{A_{k}} = 0$ であり\QUESTION ，
+      したがって
+      \begin{align*}
+        \app{\Prob}{\limsup_{k \to \infty} A_{k}}
+          = \lim_{n \to \infty} \app{\Prob}{B_{n}}
+            \leq \lim_{n \to \infty} \sum_{k = n}^{\infty} \app{\Prob}{A_{k}}
+              = 0
+      \end{align*}
+      より $\app{\Prob}{\limsup_{k \to \infty} A_{k}} = 0$ が成り立つ．\qed
+    }
+    \defpar{}{
+      定義~\ref{def:famJQ-and-famJR}で定めた $\famJR{d}$ をもとに
+      \begin{align*}
+        \famAR{d} \defeq \setprnsep{\bigcup \famJ}{\lfland{\famJ \in \Powerfin{\famJR{d}}}{
+          \forallin{J|K}{\famJ}{\lflimpl{J \neq K}{J \cap K = \varnothing}}}}
+      \end{align*}
+      で $\famAR{d} \subseteq \Power{\paren{\setR^{d}}}$ を定める．
+    }
+    \lempar[lem:B4'-of-famAR]{}{
+      $d \in \setNpos$ に対して
+      \begin{align*}
+      \tag{B4${}^\prime$}\label{axiom:B4'-of-famAR}
+        \forallin{\famA}{\Powerfin{\famAR{d}}}{\bigcap \famA \in \famAR{d}}
+      \end{align*}
+      が成り立つ．すなわち $\famAR{d}$ は有限個の共通部分をとる演算について閉じている．
+    }
+    \proof{
+      $\famJR{d}$ が明らかに有限個の共通部分をとる演算について閉じており，このことからすみやかに従う．\qed
+    }
+    \lempar[lem:basic-property-of-famAR]{}{
+      $d \in \setNpos$ とし，$\setR^{d}$ に関する補集合演算を $\compl{\paren{\dummysign}}$ とおくと，
+      $\famAR{d}$ について，以下がそれぞれ成り立つ．
+      \begin{align*}
+      \tag{B1}\label{axiom:B1-of-famAR}
+      &
+        \setR^{d} \in \famAR{d}
+      \\[0.25em]%(nonsemantic)
+      \tag{B2}\label{axiom:B2-of-famAR}
+      &
+        \forallin{A}{\famAR{d}}{\compl{A} \in \famAR{d}}
+      \\
+      \tag{B3${}^\prime$}\label{axiom:B3'-of-famAR}
+      &
+        \forallin{\famA}{\Powerfin{\famAR{d}}}{\bigcup \famA \in \famAR{d}}
+      \end{align*}
+    }
+    \proof{
+      \subproof{\eqref{axiom:B1-of-famAR}}{
+        $\setR^{d} \in \famJR{d} \subseteq \famAR{d}$ より明らか．\qed
+      }
+      \subproof{\eqref{axiom:B2-of-famAR}}{
+        $A \in \famAR{d}$ とすると，$\displaystyle A = \bigcup \famJ$ かつ
+        任意の $J \neq K$ なる $J, K \in \famJ$ に対して $J \cap K = \varnothing$ を満たすような
+        有限の集合族 $\famJ \in \Powerfin{\famJR{d}}$ が存在し，これを $m \defeq \card{\famJ} \in \setN$ を用いて
+        $\famJ = \setprn{J_{1}, \ldots, J_{m}}$ と添字づける．
+        各 $\displaystyle J_{k} = \prod\nolimits_{i = 1}^{d} \opclintvl{a^{(k)}_{i}}{b^{(k)}_{i}}$ を用いて，
+        各 $k \in \Natleq{m}$ と $i \in \Natleq{d}$ に対して
+        \begin{align*}
+          \app{I^{(k)}_{i}}{-1} &\defeq \opclintvl{-\infty}{a^{(k)}_{i}}
+        ,&
+          \app{I^{(k)}_{i}}{0} &\defeq \opclintvl{a^{(k)}_{i}}{b^{(k)}_{i}}
+        ,&
+          \app{I^{(k)}_{i}}{1} &\defeq \opclintvl{b^{(k)}_{i}}{+\infty}
+        \end{align*}
+        と定めると，各 $k \in \Natleq{m}$ に対して
+        \begin{align*}
+          J_{k} &= \prod_{i = 1}^{d} \app{I^{(k)}_{i}}{0}
+        ,&
+          \compl{J_{k}} &= \bigcup \setprnsep{\prod_{i = 1}^{d} \app{I^{(k)}_{i}}{t_{i}}}{
+            \lfland{\funcdoms{t_{\dummysub}}{\Natleq{d}}{\setprn{-1, 0, 1}}}{\existsin{i}{\Natleq{d}}{t_{i} \neq 0}}}
+        \end{align*}
+        であり，$\compl{J_{k}} \in \famAR{d}$ が成り立つ．
+        ゆえに，補題~\ref{lem:B4'-of-famAR}で既に示した\eqref{axiom:B4'-of-famAR}より
+        \begin{align*}
+          \compl{A} = \bigcap \setprnsep{\compl{J_{k}}}{k \in \Natleq{m}} \in \famAR{d}
+        \end{align*}
+        が成り立つ．\qed
+      }
+      \subproof{\eqref{axiom:B3'-of-famAR}}{
+        $\famA \in \Powerfin{\famAR{d}}$ とすると
+        $\displaystyle \bigcup \famA = \compl{\paren{\bigcap \setprnsep{\compl{A}}{A \in \famA}}}$
+        であり，\eqref{axiom:B4'-of-famAR}と\eqref{axiom:B2-of-famAR}より
+        $\displaystyle \bigcup \famA \in \famAR{d}$ がすみやかに従う．\qed
+      }
+    }
+    \defpar{}{
+      $d$ 次元Borel集合族 $\famBorel{d}$ 上で定義された確率測度 $\funcdoms{\mu}{\famBorel{d}}{\setR}$ を
+      $d$ 次元\newwordjaen{Borel確率測度}{}と呼ぶ．
+    }
+    \lempar[lem:approx-of-famBorel-by-famAR]{}{
+      $d$ 次元Borel確率測度 $\funcdoms{\mu}{\famBorel{d}}{\setR}$ に対して
+      \begin{align*}
+        \forallin{B}{\famBorel{d}}{\forallin{\epsilon}{\setRpos}{\existsin{A}{\famAR{d}}{\app{\mu}{B \symdiff A} < \epsilon}}}
+      \end{align*}
+      が成り立つ．
+    }
+    \proof{
+      $\setR^{d}$ に関する補集合演算を $\compl{\paren{\dummysign}}$ とおく．
+      $d$ 次元Borel確率測度 $\funcdoms{\mu}{\famBorel{d}}{\setR}$ に対して
+      \begin{align*}
+        \famB_{\mu} \defeq \setprnsep{B \in \famBorel{d}}{
+          \forallin{\epsilon}{\setRpos}{\existsin{A}{\famAR{d}}{\app{\mu}{B \symdiff A} < \epsilon}}}
+      \end{align*}
+      で $\famB_{\mu} \subseteq \famBorel{d}$ を定める．この $\famB_{\mu}$ が
+      $\famBorel{d} \subseteq \famB_{\mu}$ を満たすことを示すが，
+      それには $\famB_{\mu} \in \SFover{\setR^{d}}$ を示せば十分である．
+      というのも，まず明らかに $\famAR{d} \subseteq \famB_{\mu}$ であり，
+      $\famB_{\mu} \in \SFover{\setR^{d}}$ が示されていれば\eqref{axiom:S3}より $\appv{\sigma}{\famAR{d}} \subseteq \famB_{\mu}$，
+      一方 $\famJR{d} \subseteq \famAR{d}$ と補題~\ref{lem:famJR-to-famBorel}：$\appv{\sigma}{\famJR{d}} = \famBorel{d}$
+      と\eqref{axiom:S2}より $\famBorel{d} \subseteq \appv{\sigma}{\famAR{d}}$ であり，
+      結局 $\famBorel{d} \subseteq \appv{\sigma}{\famAR{d}} \subseteq \famB_{\mu}$ が成り立つからである．
+    \decosep
+      まず $\setR^{d} \in \famAR{d} \subseteq \famB_{\mu}$ より，\eqref{axiom:B1}：$\setR^{d} \in \famB_{\mu}$ は明らか．
+    \decosep
+      次に $B \in \famB_{\mu}$ とし，任意に $\epsilon \in \setRpos$ とすると，$\famB_{\mu}$ の定義より
+      或る $A \in \famAR{d}$ が存在して $\app{\mu}{B \symdiff A} < \epsilon$ を満たす．
+      この $A \in \famAR{d}$ をとると，
+      補題~\ref{lem:basic-property-of-famAR}で示した $\famAR{d}$ に関する\eqref{axiom:B2-of-famAR}より
+      $\compl{A} \in \famAR{d}$ であり，また $B \symdiff A = \compl{B} \symdiff \compl{A}$ であるから
+      この $\compl{A} \in \famAR{d}$ は $\app{\mu}{\compl{B} \symdiff \compl{A}} = \app{\mu}{B \symdiff A} < \epsilon$ を満たし，
+      したがって $\famB_{\mu}$ の定義より $\compl{B} \in \famB_{\mu}$ が成り立つ．
+      ゆえに $\famB_{\mu}$ に関して\eqref{axiom:B2}が成り立つ．
+    \decosep
+      最後に $\famB \in \Powercnt{\famB_{\mu}}$ とし，全射 $\funcdoms{B_{\dummysub}}{\setNpos}{\famB}$ で添字づける．
+      任意に $\epsilon \in \setRpos$ とすると，$\famB_{\mu}$ の定義より任意の $B_{k} \in \famB$ に対して
+      或る $A_{k} \in \famAR{d}$ が存在して $\displaystyle \app{\mu}{B_{k} \symdiff A_{k}} < \frac{\epsilon}{2^{k + 1}}$ を満たす．
+      このような列 $\funcdoms{A_{\dummysub}}{\setNpos}{\famAR{d}}$ が選択公理により構成される．
+      ここで $\displaystyle C_{n} \defeq \bigcup \setprnsep{B_{k}}{k \in \Natleq{n}}$ で
+      $\funcdoms{C_{\dummysub}}{\setNpos}{\famBorel{d}}$ を定めると，
+      この $C_{\dummysub}$ は定義より明らかに単調増大であるから，$\mu$ の\eqref{axiom:P7}より
+      $\displaystyle \lim_{n \to \infty} \app{\mu}{C_{n}} = \app{\mu}{\bigcup \setprnsep{C_{n}}{n \in \setNpos}}$，すなわち
+      \begin{align*}
+        \lim_{n \to \infty} \app{\mu}{\bigcup \setprnsep{B_{k}}{k \in \Natleq{n}}}
+          = \app{\mu}{\bigcup \setprnsep{B_{k}}{k \in \setNpos}}
+      \end{align*}
+      が成り立ち，Euclid空間の極限の定義より
+      $\displaystyle \app{\mu}{\bigcup \setprnsep{B_{k}}{k \in \setNpos}}
+        - \app{\mu}{\bigcup \setprnsep{B_{k}}{k \in \Natleq{n}}} < \frac{\epsilon}{2}$
+      を満たす $n \in \setNpos$ が存在する．
+    }
+    \TODO{証明を完成させる}
+    \thmpar{}{
+      $d$ 次元Borel確率測度 $\funcdoms{\mu, \nu}{\famBorel{d}}{\setR}$ に対して
+      \begin{align*}
+        \lflimpl{\forallin{J}{\famJR{d}}{\app{\mu}{J} = \app{\nu}{J}}}{\mu = \nu}
+      \end{align*}
+      が成り立つ．すなわち，両確率測度が $\famJR{d}$ に制限して相等しければ $\famBorel{d}$ 全体でも相等しい．
+    }
+    \proof{
+      $\mu$ と $\nu$ を $d$ 次元確率測度とし，任意の $J \in \famJR{d}$ に対して $\app{\mu}{J} = \app{\nu}{J}$ が成り立つとする．
+      $\famAR{d}$ の定義と $\mu$，$\nu$ それぞれに関する\eqref{axiom:P3'}：有限加法性より明らかに
+      任意の $A \in \famAR{d}$ に対して $\app{\mu}{A} = \app{\nu}{A}$ が成り立つ．
+      ここで $\displaystyle \app{\lambda}{X} \defeq \frac{1}{2} \paren{\app{\mu}{X} + \app{\nu}{X}}$ で
+      $\funcdoms{\lambda}{\famBorel{d}}{\setR}$ を定めると，
+      この $\lambda$ が\eqref{axiom:P1}，\eqref{axiom:P2}，\eqref{axiom:P3}を満たすことは容易に確かめられ，
+      したがって $\lambda$ は $d$ 次元Borel確率測度である．
+      ここで $B \in \famBorel{d}$ とし，任意に $\epsilon \in \setRpos$ とすると，
+      補題~\ref{lem:approx-of-famBorel-by-famAR}より或る $A \in \famAR{d}$ が存在して
+      $\displaystyle \app{\lambda}{B \symdiff A} < \frac{\epsilon}{2}$ が成り立つ．この $A \in \famAR{d}$ をとると，
+      先に示したように $\app{\mu}{A} = \app{\nu}{A}$ であるから
+      \begin{align*}
+        \absprn{\app{\mu}{B} - \app{\nu}{B}}
+          &\leq \absprn{\app{\mu}{B} - \app{\mu}{A}} + \absprn{\app{\mu}{A} - \app{\nu}{A}} + \absprn{\app{\nu}{A} - \app{\nu}{B}}
+        \\&= \absprn{\app{\mu}{B} - \app{\mu}{A}} + \absprn{\app{\nu}{B} - \app{\nu}{A}}
+      \end{align*}
+      が成り立つ．\eqref{axiom:P3'}：有限加法性より
+      \begin{align*}
+        \app{\mu}{B} - \app{\mu}{A}
+          &= \paren{\app{\mu}{A \cap B} + \app{\mu}{B \setmns A}} - \paren{\app{\mu}{A \cap B} + \app{\mu}{A \setmns B}}
+        \\&= \app{\mu}{B \setmns A} - \app{\mu}{A \setmns B}
+      ,\\[1em]%(nonsemantic)
+        \app{\mu}{A \symdiff B} &= \app{\mu}{B \setmns A} + \app{\mu}{A \setmns B}
+      \end{align*}
+      がそれぞれ成り立ち，\eqref{axiom:P1}より $\app{\mu}{B \setmns A} \geq 0$，$\app{\mu}{A \setmns B} \geq 0$ であるから
+      $\absprn{\app{\mu}{B} - \app{\mu}{A}} \leq \app{\mu}{B \symdiff A}$ が成り立つ．
+      $\nu$ についても同様にして $\absprn{\app{\nu}{B} - \app{\nu}{A}} \leq \app{\nu}{B \symdiff A}$ が成り立つ．
+      したがって
+      \begin{align*}
+        \absprn{\app{\mu}{B} - \app{\nu}{B}}
+          &= \absprn{\app{\mu}{B} - \app{\mu}{A}} + \absprn{\app{\nu}{B} - \app{\nu}{A}}
+        \\&\leq \app{\mu}{B \symdiff A} + \app{\nu}{B \symdiff A}
+        \\&= 2 \cdot \app{\lambda}{B \symdiff A}
+        \\&\leq 2 \cdot \frac{\epsilon}{2}
+          = \epsilon
+      \end{align*}
+      が成り立つ．$\epsilon \in \setRpos$ は任意であったから，結局 $\app{\mu}{B} = \app{\nu}{B}$ である．\qed
+    }
+    \defpar{分布函数}{
+      $1$ 次元Borel確率測度 $\mu$ に対し，$\app{F}{x} \defeq \app{\mu}{\opclintvl{-\infty}{x}}$ で定められる
+      $\funcdoms{F}{\setR}{\setR}$ を $\mu$ の\newwordjaen{分布函数}{}と呼ぶ．
+    }
+    \lempar{分布函数の基本的性質}{
+      $1$ 次元Borel確率測度 $\mu$ の分布函数 $F$ は以下をそれぞれ満たす：
+      \begin{align*}
+      \tag{F1}\label{axiom:F1}
+      &
+        \forallin{x|y}{\setR}{\lflimpl{x \leq y}{\app{F}{x} \leq \app{F}{y}}}
+      \\[0.5em]%(nonsemantic)
+      \tag{F2}\label{axiom:F2}
+      &
+        \forallin{x}{\setR}{\app{F}{x} = \lim_{y \searrow x} \app{F}{y}}
+      \\
+      \tag{F3$-$}\label{axiom:F3-}
+      &
+        \lim_{x \to -\infty} \app{F}{x} = 0
+      \\
+      \tag{F3$+$}\label{axiom:F3+}
+      &
+        \lim_{x \to +\infty} \app{F}{x} = 1
+      \end{align*}
+    }
+    \proof{
+      \subproof{\eqref{axiom:F1}}{
+        $x \leq y$ なる $x, y \in \setR$ に対して明らかに $\opclintvl{-\infty}{x} \subseteq \opclintvl{-\infty}{y}$ であり，
+        \eqref{axiom:P4}：$\mu$ の単調性より $\app{\mu}{\opclintvl{-\infty}{x}} \leq \app{\mu}{\opclintvl{-\infty}{y}}$，
+        すなわち $\app{F}{x} \leq \app{F}{y}$ が成り立つ．\qed
+      }
+    }
+    \TODO{証明}
+\end{document}
