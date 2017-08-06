@@ -369,15 +369,40 @@
       \end{align*}
       を満たすとき，\(f\) は \(T_{1}\) から \(T_{2}\) に向けて \(a\) で\newwordjaen{連続}{continuous}であるという．
     }
-    \lempar{}{
+    \lempar[lem:continuity]{}{
       位相空間 \(T_{1} = \seqprn{S_{1}, \topO_{1}}\) と \(T_{2} = \seqprn{S_{2}, \topO_{2}}\) および
       写像 \(\funcdoms{f}{S_{1}}{S_{2}}\) に対し，以下は同値．
       \begin{thmenum}
-      \thmenumitem \(f\) は \(T_{1}\) から \(T_{2}\) への連続写像．
-      \thmenumitem 任意の \(x \in S_{1}\) に対し，\(f\) は \(T_{1}\) から \(T_{2}\) に向けて \(x\) で連続．
+      \thmenumitem\label{lem:continuity|1}
+        \(f\) は \(T_{1}\) から \(T_{2}\) への連続写像．
+      \thmenumitem\label{lem:continuity|2}
+        任意の \(x \in S_{1}\) に対し，\(f\) は \(T_{1}\) から \(T_{2}\) に向けて \(x\) で連続．
       \end{thmenum}
     }
-    \TODO{証明}
+    \proof{%
+      \subproof{\ref{lem:continuity|1}\(\limpl\)\ref{lem:continuity|2}}{%
+        \(x \in S_{1}\)，\(V \in \opneighb{T_{2}}{\app{f}{x}}\) とする．
+        \(V \in \topO_{2}\) および \(f\) の連続性より \(\funcinvimg{f}{V} \in \topO_{1}\)．
+        また \(\app{f}{x} \in V\) より \(x \in \funcinvimg{f}{V}\) であり，
+        したがって \(\funcinvimg{f}{V} \in \opneighb{T_{1}}{x}\)．
+        以上より \(x\) に於いて \(f\) は連続．\qed
+      }
+      \subproof{\ref{lem:continuity|1}\(\backlimpl\)\ref{lem:continuity|2}}{%
+        \(V \in \topO_{2}\) とする．
+        任意に \(x \in \funcinvimg{f}{V}\) とすると，
+        逆像の定義より \(\app{f}{x} \in V\) が成り立ち，したがって \(V \in \opneighb{T_{2}}{\app{f}{x}}\) である．
+        仮定\ref{lem:continuity|2}より \(f\) は \(x\) で連続であるから，或る \(U \in \opneighb{T_{1}}{x}\) が存在して
+        \(U \subseteq \funcinvimg{f}{V}\) を満たす．
+        選択公理より，各 \(x\) をこのような \(U\) へと移す写像 \(\funcdoms{C}{\funcinvimg{f}{V}}{\topO_{1}}\) が存在する．
+        このような \(C\) をとると各 \(x \in \funcinvimg{f}{V}\) に対して \(x \in \app{C}{x} \subseteq \funcinvimg{f}{V}\) が成り立ち，
+        したがって
+        \(\displaystyle \funcinvimg{f}{V} \subseteq \bigcup \setprnsep{\app{C}{x}}{x \in \funcinvimg{f}{V}} \subseteq \funcinvimg{f}{V}\)，
+        すなわち \(\displaystyle \funcinvimg{f}{V} = \bigcup \setprnsep{\app{C}{x}}{x \in \funcinvimg{f}{V}}\) である．
+        ゆえに \(\setprnsep{\app{C}{x}}{x \in \funcinvimg{f}{V}} \subseteq \topO_{1}\) と\eqref{axiom:O2}より
+        \(\funcinvimg{f}{V} \in \topO_{1}\) が成り立つ． 
+        \(V \in \topO_{2}\) は任意であったから，\(f\) は \(T_{1}\) から \(T_{2}\) への連続写像である．\qed
+      }
+    }
     \propdefpar[propdef:induced-topology]{誘導位相}{
       位相空間 \(\seqprn{S, \topO}\) と写像 \(\funcdoms{f}{A}{S}\) に対し，
       \(\appv{f^*}{\topO} \defeq \setprnsep{\funcinvimg{f}{U}}{U \in \topO}\) は \(A\) 上の位相である．
